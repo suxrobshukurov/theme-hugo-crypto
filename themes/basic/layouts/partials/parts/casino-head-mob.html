@@ -1,0 +1,99 @@
+<div class="best-casinos single-casino mb-lg-50 mb-15">
+  <div class="casino-holder today-offer px-10 px-lg-20 mb-30 position-relative">
+    {{ if .Params.rtng }}
+    {{ partial "parts/rating-mob.html" . }}
+    {{ end }}
+    <div class="row align-items-center justify-content-between mb-lg-30 mb-10">
+      <div class="col-lg-2">
+        <div class="media mb-10 mb-lg-0 mt-n40 align-items-center">
+          <figure class="circle mr-10 mr-lg-0 position-relative casino-logo" style="background-color: #060314">
+            <a class="stretched-link" href="{{.Params.rff | default .Site.Params.Refferal}}" target="_blank"
+              rel="nofollow">
+              <figure class="header-image" style="background-color:#060314">
+                <img width="1" height="1" src="{{.Params.thbnl | default .Site.Params.DefaultImg}}"
+                  class="attachment-list-square size-list-square" alt="{{.Params.Nme | default .Site.Params.nme}}"
+                  loading="lazy" />
+              </figure>
+            </a>
+          </figure>
+          <div class="media-body d-lg-none d-block">
+            <span class="text-white mt-10 mb-0"><a href="{{.Params.rff | default .Site.Params.Refferal}}"
+                target="_blank" rel="nofollow">{{.Params.Nme | default .Site.Params.nme}}</a>
+            </span>
+            <span class="fs-11 text-purple">{{ i18n "crt-acce"}}</span>
+            {{ partial "parts/cripto-list.html" . }}
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="welcome-bonus bg-none p-lg-20 p-10 mb-10 mb-lg-0 text-center">
+          <a href="{{.Params.rff | default .Site.Params.Refferal}}" target="_blank" rel="nofollow">
+            <span class="text-greyBlue text-uppercase">{{i18n "wlcm-ttle"}}</span>
+            <p>{{.Params.wlcm | safeHTML}}</p>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 text-center">
+        <div class="buttons">
+          {{ partial "parts/ref-btn.html" (dict "ref" (.Params.rff) "text" (i18n "gt-btn")) }}
+        </div>
+      </div>
+    </div>
+    <div class="new-customer py-5 mx-lg-n30 text-center">
+      <p>{{.Params.trm | safeHTML}}</p>
+    </div>
+  </div>
+</div>
+{{/* Summary */}}
+{{ with .Params.shrt_smmry }}
+<div class="introduction position-relative border-bottom p-15">
+  <header id="mob-summary-title" class="collapsed" aria-controls="introduction"
+    on="tap:mob-summary-title.toggleClass(class='collapsed'),introduction.toggleClass(class='show')" role="accordion"
+    tabindex="0">
+    <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}}" title="{{.ttle}}" loading="lazy">
+    <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
+  </header>
+  <div class="fs-12 fw-300 lh-24 text-greyBlue collapse" id="introduction">{{.txt | safeHTML}}</div>
+</div>
+{{ end }}
+{{/* Quick facts */}}
+{{ with .Params.qck_fct }}
+<div class="introduction position-relative border-bottom p-15">
+  <header id="mob-quick-fact-title" class="collapsed" role="accordion" tabindex="0" aria-controls="quick_fact"
+    on="tap:mob-quick-fact-title.toggleClass(class='collapsed'),quick_fact.toggleClass(class='show')" role="accordion">
+    <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}} {{.ttle}}" loading="lazy">
+    <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
+  </header>
+  <div class="collapse" id="quick_fact">
+    <ul class="custom-body">
+      {{ range .itms }}
+      <li class="row no-gutters align-items-center justify-content-between">
+        <span class="col-auto fs-12 fw-300 text-greyBlue p-10">{{.ttle | safeHTML}}:</span>
+        <span class="col-auto fs-13 fw-600 text-closeBlack p-10">{{.vle | safeHTML}}</span>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ end }}
+
+{{/* Bonus Information */}}
+{{ with .Params.bns_inf }}
+<div class="introduction position-relative border-bottom p-15">
+  <header id="mob-bonus-info-title" class="collapsed" role="accordion" tabindex="0" aria-controls="bonus_info"
+    on="tap:mob-bonus-info-title.toggleClass(class='collapsed'),bonus_info.toggleClass(class='show')" role="accordion">
+    <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}} {{.ttle}}" loading="lazy">
+    <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
+  </header>
+  <div class="collapse" id="bonus_info">
+    <ul class="custom-body">
+      {{ range .itms }}
+      <li class="row no-gutters align-items-center justify-content-between">
+        <span class="col-auto fs-12 fw-300 text-greyBlue p-10">{{.ttle | safeHTML}}:</span>
+        <span class="col-auto fs-13 fw-600 text-closeBlack p-10">{{.vle | safeHTML}}</span>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ end }}

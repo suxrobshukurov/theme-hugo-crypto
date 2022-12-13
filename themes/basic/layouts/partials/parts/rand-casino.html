@@ -1,0 +1,54 @@
+<section class="best-casinos casino-today mb-15">
+  <div class="container">
+    <div class="casino-holder today-offer pt-30 px-lg-20 px-10 mb-30 position-relative">
+      <figure class="casino-of-month position-absolute d-none d-lg-block">
+        <img src="/images/icons/casino-of-month.svg" alt="{{.Params.Nme}} Icon" title="{{.Params.Nme}}">
+      </figure>
+      <div
+        class="position-absolute tag-mnt d-none d-lg-block fs-14 fw-700 text-white background-green text-uppercase px-25 py-5">
+        {{i18n "tdy-offr"}}
+      </div>
+      <div class="line d-none d-lg-block position-absolute background-blue"></div>
+      <div class="rating position-absolute background-blue text-center d-block d-lg-none">
+        <img width="10" height="10" loading="lazy" src="/images/icons/star.svg" alt="Star Icon">
+        <p class="text-white">{{.Params.rtng}}</p>
+      </div>
+      <div class="row align-items-center justify-content-between mb-lg-30 mb-10">
+        <div class="col-lg-2">
+          <div class="media mb-10 mb-lg-0">
+            <a class="stretched-link" href="{{.Params.rff | default .Site.Params.Refferal}}" target="_blank"
+              rel="nofollow">
+              <figure class="header-image mr-20 position-relative" style="background-color:#060314">
+                <img width="1" height="1" src="{{.Params.thbnl | default .Site.Params.DefaultImg}}"
+                  class="attachment-list-square size-list-square" alt="{{.Params.nme}}" title="{{.Params.nme}}"
+                  loading="lazy" />
+              </figure>
+            </a>
+            <div class="media-body d-lg-none d-block">
+              <div class="text-closeBlack2 mb-5"><a href="{{.Params.rff | default .Site.Params.Refferal}}"
+                  target="_blank" rel="nofollow">{{.Params.nme}}</a></div>
+              <span class="fs-11 text-purple">{{i18n "crt-acce"}}</span>
+              {{ partial "parts/cripto-list.html" . }}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="welcome-bonus p-lg-20 p-10 mb-10 mb-lg-0 text-center text-lg-left">
+            <a target="_blank" rel="nofollow" href="{{.Params.rff | default .Site.Params.Refferal}}">
+              <span class="text-greyBlue text-uppercase">{{i18n "wlcm-ttle"}}</span>
+              <p>{{.Params.wlcm | safeHTML}}</p>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-3 text-center">
+          <div class="buttons">
+            {{ partial "parts/ref-btn.html" (dict "ref" (.Params.rff) "text" (i18n "gt-btn")) }}
+          </div>
+        </div>
+      </div>
+      <div class="new-customer fs-10 py-5 text-center text-lg-left">
+        <p>{{.Params.trm}}</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+<li class="col-lg-auto lang-dropdown">
+  <div class="language-switcher">
+    <ul class="main-switcher">
+      <li>
+        {{ range .Site.Languages }}
+        {{ if eq . $.Site.Language }}
+        <span class="fs-12 fw-300 text-uppercase">
+          <figure class="iso-flag d-inline-block align-middle mr-5" style="background-image: url({{.Params.Icon}})">
+          </figure>{{.LanguageName}}
+        </span>
+        {{else}}
+        <ul class="sub-menu" id="select_lang_switch">
+          {{ range $lang := $.Translations }}
+          <li class="position-relative ">
+            <figure class="iso-flag d-inline-block align-middle mr-5"
+              style="background-image: url({{.Language.Params.Icon}})">
+            </figure><a class="stretched-link fs-12 fw-300 text-uppercase" href="{{.Permalink }}">{{
+              .Language.LanguageName }}</a>
+          </li>
+          {{ end }}
+        </ul>
+        {{end}}
+        {{end}}
+      </li>
+    </ul>
+  </div>
+</li>

@@ -1,0 +1,50 @@
+{{$year := now.Format "2006"}}
+<footer class="site-footer">
+  <div class="foot py-lg-30 py-20 px-5 px-lg-0">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-3 mb-20 mb-lg-0">
+          {{ if .Site.Params.Footer_logo }}
+          <figure class="mb-25 position-relative">
+            <figure>
+              <img width="203" height="34" src="{{.Site.Params.footer_logo}}" class="attachment-full size-full"
+                alt="{{.Site.Params.nme}}" />
+            </figure>
+          </figure>
+          {{else}}
+          <div class="logo text-white mb-20">{{.Site.Params.Nme}}</div>
+          {{ end }}
+          {{ with i18n "ftr-descr" }}
+          <p class="fs-12 lh-18 text-white mb-20">{{. | safeHTML}}</p>
+          {{ end }}
+        </div>
+        <div class="col-lg-6 menu">
+          <div class="row">
+            {{ partial "footer/links.html" (dict "menu" .Site.Menus.first "title" (i18n "frst-ftr") "id" 1 ) }}
+            {{ partial "footer/links.html" (dict "menu" .Site.Menus.second "title" (i18n "scnd-ftr") "id" 2 ) }}
+            {{ partial "footer/links.html" (dict "menu" .Site.Menus.three "title" (i18n "thr-ftr") "id" 3 ) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copy py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-between text-center">
+        <div class="col-lg-auto mb-10 mb-lg-0">
+          <div class="row justify-content-center">
+            <div class="col-auto">
+              <img width="20" height="20" src="/images/18+.svg" alt="18+ icon">
+            </div>
+          </div>
+        </div>
+        {{ with i18n "cpryt" (dict "Year" $year )}}
+        <div class="col-lg-auto mb-10 mb-lg-0">
+          <p class="fs-11 text-white">{{.}}</p>
+        </div>
+        {{ end }}
+
+      </div>
+    </div>
+  </div>
+</footer>

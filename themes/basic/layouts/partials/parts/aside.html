@@ -1,0 +1,54 @@
+<div class="col-4">
+  <aside class="sidebar sticky-top d-none d-lg-block" id="quick">
+    <header class="p-20">
+      {{ with .Params.qck_fct }}
+      <div class="quick-facts mb-25">
+        <header class="mb-10">
+          <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}} {{.ttle}}" loading="lazy">
+          <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
+        </header>
+        <ul>
+          {{ range .itms }}
+          <li class="row no-gutters align-items-center justify-content-between">
+            <span class="col-auto fs-12 fw-300 text-greyBlue p-10">{{.ttle | safeHTML}}:</span>
+            <span class="col-auto fs-13 fw-600 text-closeBlack p-10">{{.vle | safeHTML}}</span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+      {{ with .Params.shrt_smmry }}
+      <div class="introduction mb-25">
+        <header class="mb-10">
+          <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}}" title="{{.ttle}}" loading="lazy">
+          <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
+        </header>
+        <div class="fs-12 fw-300 lh-24 text-greyBlue">{{.txt | safeHTML}}</div>
+      </div>
+      {{ end }}
+      {{ with .Params.bns_inf }}
+      <div class="bonus-info">
+        <header class="mb-10">
+          <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}} {{.ttle}}" loading="lazy">
+          <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
+        </header>
+        <ul>
+          {{ range .itms }}
+          <li class="row no-gutters align-items-center justify-content-between">
+            <span class="col-auto fs-12 fw-300 text-greyBlue p-10">{{.ttle | safeHTML}}:</span>
+            <span class="col-auto fs-13 fw-600 text-closeBlack p-10">{{.vle | safeHTML}}</span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+
+    </header>
+    <footer class="px-20 pb-10 pt-15 text-center">
+      {{ partial "parts/ref-btn.html" (dict "ref" (.Params.rff) "text" (i18n "gtc-btn")) }}
+      <div class="new-customer fs-10 py-5">
+        <p>{{.Params.trm | safeHTML}}</p>
+      </div>
+    </footer>
+  </aside>
+</div>

@@ -1,0 +1,157 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'Best Bitcoin Casinos » Find The Best Crypto Casino '
+theme = "basic"
+DefaultContentLanguage = 'en'
+enableRobotsTXT = true
+disableHugoGeneratorInject = true
+summaryLength = 30
+paginate = 50 
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 2
+    startLevel = 2
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  logo = '/images/logo-dark.png'
+  footer_logo = '/images/logo-white.png'
+  defaultImg = '/images/default.png'
+  descr = "Looking for the best crypto casinos for 2022? ➤ Updated Daily ✔️ Exclusive Bonuses ✔️ Expert Reviews ✔️ Find the best bitcoin casino for you!"
+  nme = 'Crypto Casinos'
+  referral = 'https://redirectid.com/click.php?key=42t5uehm7vx8tk6nibtr&split='
+  athr = "Barbara"
+  CPU = "/"
+
+
+
+[languages.en]
+  languageName = 'EN'
+  weight = 1
+  [languages.en.params]
+    icon = '/images/flags/gb-nir.svg'
+# [languages.de]
+#   languageName = 'DE'
+#   weight = 2
+#   [languages.de.params]
+#     icon = '/images/flags/de.png'
+
+
+#menu
+
+[[languages.en.menu.main]]
+  identifier = 'casino'
+  name = 'Casino'
+  url = '/'
+  weight = 1
+[[languages.en.menu.main]]
+  identifier = 'betting'
+  name = 'Betting'
+  url = '#'
+  weight = 2
+[[languages.en.menu.main]]
+  identifier = 'poker'
+  name = 'Poker'
+  url = '#'
+  weight = 3
+[[languages.en.menu.main]]
+  identifier = 'lottery'
+  name = 'Lottery'
+  url = '#'
+  weight = 4
+[[languages.en.menu.main]]
+  identifier = 'dice'
+  name = 'Dice'
+  url = '#'
+  weight = 5
+[[languages.en.menu.main]]
+  identifier = 'other'
+  name = 'Other'
+  weight = 6
+[[languages.en.menu.main]]
+  identifier = 'ethereum'
+  name = 'Ethereum Casinos'
+  parent = 'other'
+  url = '#'
+  weight = 1
+[[languages.en.menu.main]]
+  identifier = 'tether'
+  name = 'Tether Casinos'
+  parent = 'other'
+  url = '#'
+  weight = 1
+[[languages.en.menu.main]]
+  identifier = 'news'
+  name = 'News'
+  url = '#'
+  weight = 7
+
+# menu
+# [[languages.de.menu.main]]
+#   name = 'Startseite'
+#   url = '/'
+#   weight = 1
+# [[languages.de.menu.main]]
+#   name = 'News'
+#   url = '/blog/'
+#   weight = 2
+
+
+# footer menu
+[[languages.en.menu.first]]
+  name = "Crypto Casinos"
+  url = '#'
+  weight = 1
+[[languages.en.menu.first]]
+  name = "Crypto Betting"
+  url = '#'
+  weight = 2
+[[languages.en.menu.first]]
+  name = "Crypto Poker"
+  url = '#'
+  weight = 3
+[[languages.en.menu.first]]
+  name = "Crypto Lottery"
+  url = '#'
+  weight = 4
+[[languages.en.menu.first]]
+  name = "Crypto Dice"
+  url = '#'
+  weight = 5
+
+[[languages.en.menu.second]]
+  name = "Ethereum Casinos"
+  url = '#'
+  weight = 1
+[[languages.en.menu.second]]
+  name = "Tether Casinos"
+  url = '#'
+  weight = 2
+[[languages.en.menu.second]]
+  name = "Dogecoin Casinos"
+  url = '#'
+  weight = 3
+[[languages.en.menu.second]]
+  name = "Bitcoin Slots"
+  url = '#'
+  weight = 4
+
+[[languages.en.menu.three]]
+  name = "About us"
+  url = '#'
+  weight = 1
+[[languages.en.menu.three]]
+  name = "Privacy Policy"
+  url = '#'
+  weight = 2
+[[languages.en.menu.three]]
+  name = "Contact Us"
+  url = '#'
+  weight = 3
+[[languages.en.menu.three]]
+  name = "CO2-Neutral Website"
+  url = '#'
+  weight = 4

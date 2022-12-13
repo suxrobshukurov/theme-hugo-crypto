@@ -1,0 +1,302 @@
+<div class="best-casinos pt-md-0 pb-md-0 pt-50">
+  <div class="container">
+    {{$casinos := where (where .Site.RegularPages "Type" "in" "casino") ".Params.homarating" "==" true}}
+    {{ range $key, $el := $casinos }}
+    {{$on := printf "%s%s%s" `on="tap:collapseCasino` (string $key) `.toggleClass(class='show')"`}}
+    <div class="casino-holder pt-lg-30 pt-10 px-lg-20 px-10 mb-30 position-relative">
+      {{ with .Params.bst }}
+      <div class="position-absolute tag d-none d-lg-block text-uppercase px-10 py-5" style="background-color: {{.clr}}">
+        {{.ttle}}
+      </div>
+      <div class="ribbon-holder position-absolute d-none d-lg-block">
+        <span class="tag-tip tag-tip-1" style="background-color: {{.clr}};"></span><span class="tag-tip tag-tip-2"
+          style="background-color: {{.clr}};"></span>
+      </div>
+      {{ end }}
+      {{ with .Params.rtng }}
+      <div class="rating position-absolute background-blue text-center">
+        <amp-img width="10" height="10" alt="Star Icon" src="/images/icons/star.svg"></amp-img>
+        <p class="fs-18 fw-700 text-white">{{.}}</p>
+      </div>
+      {{ end }}
+      <div class="row justify-content-between pb-lg-20">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="media mb-10 mb-lg-0">
+            <a href="{{.Permalink}}" target="_blank">
+              <figure class="position-relative d-block h-100 mr-lg-20 mr-10 pb-lg-90 pb-60"
+                style="background-color:{{.Params.Bg_color}};">
+                <amp-img width="1" height="1" src="{{.Params.icon | default .Params.thbnl}}" layout="responsive"
+                  alt="{{.Params.Nme}}"></amp-img>
+              </figure>
+            </a>
+            <div class="media-body">
+              <h3 class="fw-700 text-closeBlack2 mb-lg-5 mb-0"><a href="{{.Permalink}}">{{.Params.nme}}</a></h3>
+              {{ with i18n "crt-acce" }}
+              <span class="fs-11 text-purple">{{.}}</span>
+              {{ end }}
+              <ul class="nav row cryptos">
+                {{ range .Params.crpts }}
+                <li class="col-auto">
+                  <amp-img alt="{{.img}}"  title="{{.ttle}}" src="{{.img}}" width="20" height="20"></amp-img>
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 px-0 px-lg-10">
+          <div class="welcome-bonus text-center text-lg-left p-20 mx-lg-n20">
+            <a class="stretched-link" target="_blank" href="{{.Permalink}}">
+              {{ with i18n "wlcm-ttle" }}
+              <span class="fs-14 fw-300 text-greyBlue text-uppercase">{{.}}</span>
+              {{ end }}
+              {{ with .Params.wlcm }}
+              <p>{{. | safeHTML}}</p>
+              {{ end }}
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-2 d-none d-lg-block">
+          <div class="highlights">
+            {{ with i18n "hghlts-ttle" }}
+            <span class="fs-14 fw-300 text-greyBlue text-uppercase">{{.}}</span>
+            {{ end }}
+            {{ with .Params.hghlts }}
+            <ul class="fs-12 lh-18 text-purple ">
+              {{ range . }}
+              <li class="pl-20">{{.}}</li>
+              {{ end }}
+            </ul>
+            {{ end }}
+          </div>
+        </div>
+        <div class="col-lg-2 text-center px-0 px-lg-10">
+          <div class="buttons pb-5">
+            {{ partial "parts/ref-btn.html" (dict "ref" (.Params.rff) "text" (i18n "gt-btn")) }}
+            {{ with i18n "qck-fcts" }}
+            <button class="quick-facts fs-13 fw-300 text-blue text-uppercase px-10" role="button" tabindex="0" {{$on | safeHTMLAttr}}>{{.}}</button>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      <div class="collapse mx-lg-n20 mx-n10" id="collapseCasino{{$key}}">
+        <div class="p-lg-20 p-10 custom-body" style="background-color: #fff">
+          <div class="row no-gutters-lg justify-content-between">
+            <div class="col-lg-7 mb-15 mb-lg-0 order-lg-2 order-3">
+              <header class="mb-10">
+                <img alt="Summary Icon"
+                  data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/introduction.svg"
+                  class="d-inline-block mr-5 lazyloading"
+                  src="./Best Bitcoin Casinos » Find The Best Crypto Casino (2022)_files/introduction.svg"
+                  loading="lazy"><noscript><img alt="Summary Icon"
+                    data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/introduction.svg"
+                    class="d-inline-block mr-5 lazyload"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                      alt="Summary Icon"
+                      data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/introduction.svg"
+                      class="d-inline-block mr-5 lazyload"
+                      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                        alt="Summary Icon"
+                        data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/introduction.svg"
+                        class="d-inline-block mr-5 lazyload"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                          alt="Summary Icon"
+                          data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/introduction.svg"
+                          class="d-inline-block mr-5 lazyload"
+                          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                            alt="Summary Icon"
+                            data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/introduction.svg"
+                            class="d-inline-block mr-5 lazyload"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                              alt="Summary Icon"
+                              data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/introduction.svg"
+                              class="d-inline-block mr-5 lazyload"
+                              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                alt="Summary Icon"
+                                data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/introduction.svg"
+                                class="d-inline-block mr-5 lazyload"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                  alt="Summary Icon"
+                                  data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/introduction.svg"
+                                  class="d-inline-block mr-5 lazyload"
+                                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                    alt="Summary Icon"
+                                    data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/introduction.svg"
+                                    class="d-inline-block mr-5 lazyload"
+                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                      class="d-inline-block mr-5"
+                                      src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/introduction.svg"
+                                      alt="Summary Icon"></noscript>
+                                  <h4 class="fs-11 fw-300 text-grey text-uppercase d-inline-block">Short summary
+                                  </h4>
+                                  <div class="fs-12 fw-300 lh-24 text-greyBlue pb-30">
+                                    <p>Betplay.io is a crypto casino site that launched earlier this year and is
+                                      one of the few casinos to offer full support for BTC lightning. Simply
+                                      put, BTC lightning means that this casino offers instant transfers and
+                                      near-zero transaction fees.</p>
+                                  </div>
+                                  <a class="read-review fs-13 fw-300 text-blue btn-text-only position-absolute"
+                                    href="{{.Permalink}}">Read the full review</a>
+              </header>
+            </div>
+            <div class="col-lg-2 col-6 mb-15 mb-lg-0 order-1">
+              <header class="mb-10">
+                <img alt="Bonus Information Icon"
+                  data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-information.svg"
+                  class="d-inline-block mr-5 lazyloading"
+                  src="./Best Bitcoin Casinos » Find The Best Crypto Casino (2022)_files/bonus-information.svg"
+                  loading="lazy"><noscript><img alt="Bonus Information Icon"
+                    data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-information.svg"
+                    class="d-inline-block mr-5 lazyload"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                      alt="Bonus Information Icon"
+                      data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-information.svg"
+                      class="d-inline-block mr-5 lazyload"
+                      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                        alt="Bonus Information Icon"
+                        data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-information.svg"
+                        class="d-inline-block mr-5 lazyload"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                          alt="Bonus Information Icon"
+                          data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-information.svg"
+                          class="d-inline-block mr-5 lazyload"
+                          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                            alt="Bonus Information Icon"
+                            data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-information.svg"
+                            class="d-inline-block mr-5 lazyload"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                              alt="Bonus Information Icon"
+                              data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-information.svg"
+                              class="d-inline-block mr-5 lazyload"
+                              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                alt="Bonus Information Icon"
+                                data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-information.svg"
+                                class="d-inline-block mr-5 lazyload"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                  alt="Bonus Information Icon"
+                                  data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-information.svg"
+                                  class="d-inline-block mr-5 lazyload"
+                                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                    alt="Bonus Information Icon"
+                                    data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-information.svg"
+                                    class="d-inline-block mr-5 lazyload"
+                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                      class="d-inline-block mr-5"
+                                      src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-information.svg"
+                                      alt="Bonus Information Icon"></noscript>
+                                  <h4 class="fs-11 fw-300 text-grey text-uppercase d-inline-block">Quick Facts
+                                  </h4>
+              </header>
+              <ul>
+                <li class="row no-gutters align-items-center mb-5">
+                  <span class="col-lg-6 fs-12 fw-300 text-greyBlue p-lg-10 px-5">Online since:</span>
+                  <span class="col-lg-6 fs-13 fw-600 text-closeBlack p-lg-10 px-5">2021</span>
+                </li>
+                <li class="row no-gutters align-items-center mb-5">
+                  <span class="col-lg-6 fs-12 fw-300 text-greyBlue p-lg-10 px-5">License:</span>
+                  <span class="col-lg-6 fs-13 fw-600 text-closeBlack p-lg-10 px-5">Costa Rica</span>
+                </li>
+                <li class="row no-gutters align-items-center mb-5">
+                  <span class="col-lg-6 fs-12 fw-300 text-greyBlue p-lg-10 px-5">Min deposit:</span>
+                  <span class="col-lg-6 fs-13 fw-600 text-closeBlack p-lg-10 px-5">None</span>
+                </li>
+                <li class="row no-gutters align-items-center mb-5">
+                  <span class="col-lg-6 fs-12 fw-300 text-greyBlue p-lg-10 px-5">Min withdraw:</span>
+                  <span class="col-lg-6 fs-13 fw-600 text-closeBlack p-lg-10 px-5">None</span>
+                </li>
+                <li class="row no-gutters align-items-center mb-5">
+                  <span class="col-lg-6 fs-12 fw-300 text-greyBlue p-lg-10 px-5">Website:</span>
+                  <div class="col-lg-6">
+                    <a class="fs-13 fw-300 text-grey btn-text-only p-lg-10 px-5" href="{{.Permalink}}"
+                      target="_blank">Claim
+                      bonus</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-6 mb-15 mb-lg-0 order-2 order-lg-3">
+              <header class="mb-10">
+                <img alt="Bonus Handchip Icon"
+                  data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-handchip.svg"
+                  class="d-inline-block mr-5 lazyloading"
+                  src="./Best Bitcoin Casinos » Find The Best Crypto Casino (2022)_files/bonus-handchip.svg"
+                  loading="lazy"><noscript><img alt="Bonus Handchip Icon"
+                    data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-handchip.svg"
+                    class="d-inline-block mr-5 lazyload"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                      alt="Bonus Handchip Icon"
+                      data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-handchip.svg"
+                      class="d-inline-block mr-5 lazyload"
+                      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                        alt="Bonus Handchip Icon"
+                        data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-handchip.svg"
+                        class="d-inline-block mr-5 lazyload"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                          alt="Bonus Handchip Icon"
+                          data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-handchip.svg"
+                          class="d-inline-block mr-5 lazyload"
+                          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                            alt="Bonus Handchip Icon"
+                            data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-handchip.svg"
+                            class="d-inline-block mr-5 lazyload"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                              alt="Bonus Handchip Icon"
+                              data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-handchip.svg"
+                              class="d-inline-block mr-5 lazyload"
+                              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                alt="Bonus Handchip Icon"
+                                data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-handchip.svg"
+                                class="d-inline-block mr-5 lazyload"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                  alt="Bonus Handchip Icon"
+                                  data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-handchip.svg"
+                                  class="d-inline-block mr-5 lazyload"
+                                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                    alt="Bonus Handchip Icon"
+                                    data-src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-handchip.svg"
+                                    class="d-inline-block mr-5 lazyload"
+                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
+                                      class="d-inline-block mr-5"
+                                      src="https://cryptocasinos.com/wp-content/themes/cryptocasinos/assets/images/svgs/bonus-handchip.svg"
+                                      alt="Bonus Handchip Icon"></noscript>
+                                  <h4 class="fs-11 fw-300 text-grey text-uppercase d-none d-lg-inline-block">
+                                    Bonus Information</h4>
+                                  <h4 class="fs-11 fw-300 text-grey text-uppercase d-inline-block d-lg-none">
+                                    Bonus</h4>
+              </header>
+              <ul>
+                <li class="row no-gutters align-items-center mb-5">
+                  <span class="col-lg-6 fs-12 fw-300 text-greyBlue p-lg-10 px-5">Bonus:</span>
+                  <span class="col-lg-6 fs-13 fw-600 text-closeBlack p-lg-10 px-5">50 mBTC</span>
+                </li>
+                <li class="row no-gutters align-items-center mb-5">
+                  <span class="col-lg-6 fs-12 fw-300 text-greyBlue p-lg-10 px-5">Bonus%:</span>
+                  <span class="col-lg-6 fs-13 fw-600 text-closeBlack p-lg-10 px-5">100%</span>
+                </li>
+                <li class="row no-gutters align-items-center mb-5">
+                  <span class="col-lg-6 fs-12 fw-300 text-greyBlue p-lg-10 px-5">Free Spins:</span>
+                  <span class="col-lg-6 fs-13 fw-600 text-closeBlack p-lg-10 px-5">0</span>
+                </li>
+                <li class="row no-gutters align-items-center mb-5">
+                  <span class="col-lg-6 fs-12 fw-300 text-greyBlue p-lg-10 px-5">Wagering:</span>
+                  <span class="col-lg-6 fs-13 fw-600 text-closeBlack p-lg-10 px-5">35x</span>
+                </li>
+                <li class="pt-lg-10">
+                  <a class="main-button text-white fs-13 fw-700 text-uppercase d-block text-center lh-42"
+                    href="{{.Permalink}}" target="_blank">Get Bonus</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="new-customer fs-10 py-5 text-lg-left text-center">
+        <p>18+ | New Players Only - <a href="https://cryptocasinos.com/terms/betplayio" target="_blank">
+            T&amp;C Apply</a></p>
+      </div>
+    </div>
+    {{ end }}
+
+  </div>
+</div>

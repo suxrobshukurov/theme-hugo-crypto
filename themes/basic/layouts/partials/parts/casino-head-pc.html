@@ -1,0 +1,45 @@
+<div class="casino-holder pt-30 px-30 mb-30 position-relative d-none d-lg-block">
+  {{ partial "parts/rating-pc.html" . }}
+  <div class="row justify-content-between align-items-center mb-30">
+    <div class="col-2">
+      <a class="fs-22 fw-700 text-closeBlack2 mb-5" href="{{.Params.rff | default .Site.Params.Refferal}}"
+        target="_blank" rel="nofollow">
+        {{.Params.nme}}
+      </a>
+      <span class="fs-11 text-purple">{{i18n "crt-acce"}}</span>
+      {{ partial "parts/cripto-list.html" . }}
+    </div>
+    <div class="col-2">
+      <div class="highlights check-green">
+        <span class="fs-14 fw-300 text-greyBlue text-uppercase">{{i18n "hghlts-ttle"}}</span>
+        {{ partial "parts/highlights-list.html" . }}
+      </div>
+    </div>
+    <div class="col">
+      <div class="welcome-bonus bg-none mt-20 p-20 text-center">
+        <a href="{{.Params.rff | default .Site.Params.Refferal}}" target="_blank" rel="nofollow">
+          <figure class="header-image mb-10 mt-n60" style="background-color:#060314">
+            <img width="1" height="1" src="{{.Params.thbnl | default .Site.Params.DefaultImg}}"
+              class="attachment-list-square size-list-square" alt="{{.Params.Nme | default .Site.Params.nme}}"
+              loading="lazy" />
+          </figure>
+        </a>
+        <a target="_blank" rel="nofollow" href="{{.Params.rff | default .Site.Params.Refferal}}">
+          <span class="fs-14 fw-300 text-greyBlue text-uppercase">{{i18n "wlcm-ttle"}}</span>
+          <p>{{.Params.wlcm | safeHTML}}</p>
+        </a>
+      </div>
+    </div>
+    <div class="col-4 text-center">
+      <div class="buttons" id="quick-facts">
+        {{ partial "parts/ref-btn.html" (dict "ref" (.Params.rff) "text" (i18n "gt-btn")) }}
+        {{ with i18n "qck-fcts" }}
+        <a class="quick-facts fs-13 fw-300 text-blue text-uppercase px-10 move" href="#quick">{{.}}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  <div class="new-customer py-5 mx-lg-n30">
+    <p>{{.Params.trm | safeHTML}}</p>
+  </div>
+</div>

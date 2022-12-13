@@ -1,0 +1,67 @@
+<div class="row information">
+  {{ with .Params.prdct }}
+  <div class="col-lg-4 mb-lg-10 mb-20 px-25 px-lg-10">
+    <div class="h4 fw-300 text-white text-uppercase collapsed" id="product-title" role="button" aria-expanded="false"
+      tabindex="0" aria-controls="product"
+      on="tap:product-title.toggleClass(class='collapsed'),product.toggleClass(class='show')">{{i18n "prdct-ttle"}}
+    </div>
+    <div class="checks collapse dont-collapse-md" id="product">
+      <div class="information-holder p-10">
+        <ul class="row">
+          {{ range . }}
+          <li class="col-6">
+            <span class="d-block fs-14 fw-300 text-greyBlue py-5 pl-40 h-100">{{. | safeHTML}}</span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+  {{ with .Params.sftwr }}
+  <div class="col-lg-4 mb-lg-10 mb-20 px-25 px-lg-10">
+    <div class="h4 fw-300 text-white text-uppercase collapsed" id="software-title" role="button" aria-expanded="false"
+      tabindex="0" aria-controls="software"
+      on="tap:software-title.toggleClass(class='collapsed'),software.toggleClass(class='show')">{{i18n "sftwr-ttle"}}
+    </div>
+    <div class="collapse dont-collapse-md" id="software">
+      <div class="information-holder p-10">
+        <ul class="row">
+          {{ range . }}
+          <li class="col-6">
+            <span class="d-block fs-14 fw-300 text-greyBlue py-5 pl-10 h-100">
+              <img src="{{.img | default .Site.Params.DefaultImg}}" width="20" height="20" alt="{{.alt}}"
+                title="{{.ttle}}" class="webpexpress-processed">
+              {{.ttle}}
+            </span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+  {{ with .Params.pymnt }}
+  <div class="col-lg-4 mb-lg-10 mb-20 px-25 px-lg-10">
+    <div id="payment-title" class="h4 fw-300 text-white text-uppercase collapsed" role="button" aria-expanded="false"
+      tabindex="0" aria-controls="payment"
+      on="tap:payment-title.toggleClass(class='collapsed'),payment.toggleClass(class='show')">{{i18n "pymnt-ttle"}}
+    </div>
+    <div class="collapse dont-collapse-md" id="payment">
+      <div class="information-holder p-10">
+        <ul class="row">
+          {{ range . }}
+          <li class="col-6">
+            <span class="d-block fs-14 fw-300 text-greyBlue py-5 pl-10 h-100">
+              <img src="{{.img | default .Site.Params.DefaultImg}}" width="20" height="20" alt="{{.alt}}"
+                title="{{.ttle}}">
+              {{.ttle}}
+            </span>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</div>

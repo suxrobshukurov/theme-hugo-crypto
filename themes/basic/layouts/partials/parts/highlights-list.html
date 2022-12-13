@@ -1,0 +1,7 @@
+{{ with .Params.hghlts }}
+<ul class="fs-12 lh-18 text-purple ">
+  {{ range . }}
+  <li class="pl-25 mb-5">{{.}}</li>
+  {{ end }}
+</ul>
+{{ end }}

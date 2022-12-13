@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="description"
+  content="{{.Params.Descr | default .Site.Params.Descr}}" />
+
+{{if .Draft }}
+<meta name="robots" content="noindex, nofollow" />
+{{else}}
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+{{end}}
+{{ with i18n `lng-lcl`}}
+<meta property="og:locale" content="{{.}}">
+{{ end }}
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:title"
+  content="{{.Params.Title | default .Site.Title}}" />
+<meta property="og:description"
+  content="{{.Params.Descr | default .Site.Params.Descr}}">
+<meta property="og:image" content="{{.Params.thbnl | default .Site.Params.Logo}}">
+<meta property="og:site_name" content="{{.Site.Params.nme}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{.Params.thbnl | default .Site.Params.Logo}}" />
+<meta name="twitter:description"
+  content="{{.Params.Descr | default .Site.Params.Descr}}" />
+<meta name="twitter:title"
+  content="{{.Params.Title | default .Site.Title}}" />

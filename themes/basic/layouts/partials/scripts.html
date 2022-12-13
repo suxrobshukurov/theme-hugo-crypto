@@ -1,0 +1,46 @@
+<script type="application/ld+json">
+  {{ if eq .Section "blog" }}
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ .Title }},
+    "image": {{ .Params.thbnl | default .Site.Params.logo }},
+    "datePublished": {{ .PublishDate }},
+    "dateModified": {{ .Lastmod }},
+    "author": {
+      "@type": "Person",
+      "name": {{ .Params.athr }}
+    },
+    "mainEntityOfPage": { "@type": "WebPage" },
+     "publisher": {
+      "@type": "Organization",
+      "name": {{ .Site.Params.nme }},
+      "logo": {
+        "@type": "ImageObject",
+        "url": {{ .Site.Params.logo }}
+      }
+    },
+    "description": {{ .Summary | plainify | safeHTML }},
+    "keywords": [{{.Params.keywords | default .Site.Params.keywords}}]
+  },
+  {{ end }}
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": {{ .Site.Params.nme }},
+    "url": {{ .Site.BaseURL }},
+  }
+</script>
+<script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Article",
+      "headline" : "{{.Title}}",
+      "author" : {
+        "@type" : "Person",
+        "name" : "{{ .Params.athr | default .Site.Params.athr}}"
+      },
+      "datePublished" : "{{.PublishDate}}",
+      "image" : "{{ .Params.thbnl | default .Site.Params.logo }}"
+    }
+</script>

@@ -1,0 +1,45 @@
+<header class="site-header text-center sticky-top">
+  <div class="container position-relative">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-lg-auto logo">
+        <a href="{{.Site.BaseURL}}">
+          {{ if .Site.Params.Logo }}
+          <img width="226" height="30" src="{{.Site.Params.Logo}}" alt="{{.Site.Params.Nme}}"
+            title="{{.Site.Params.Nme}}">
+          {{else}}
+          {{.Site.Params.Nme}}
+          {{ end }}
+        </a>
+      </div>
+      <div class="col-lg-auto">
+        <div class="site-nav-menu text-center" id="nav">
+          {{ partial "header/menu.html" . }}
+          <ul class="nav main-menu row align-items-center d-block d-lg-none">
+            {{ partial "header/langs.html" . }}
+          </ul>
+        </div>
+      </div>
+      <button class="menu-lines" id="menu-btn" role="button" tabindex="0"
+        on="tap:menu-btn.toggleClass(class='menu-toggle'),body.toggleClass(class='body-overlay'),nav.toggleClass(class='show')">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <span class="search-btn d-block d-lg-none" role="button" tabindex="0" on="tap:search.toggleClass(class='show')">
+        <img width="24" height="24" src="/images/icons/search.svg" alt="Search icon">
+      </span>
+      <div class="col-lg-auto d-none d-lg-block">
+        <ul class="row nav search-lang">
+          <li class="col-auto">
+            <span class="search-btn" role="button" tabindex="0" data-id="search-btn"
+              on="tap:search.toggleClass(class='show')">
+              <img width="24" height="24" src="/images/icons/search.svg" alt="Search icon" data-id="search-btn">
+            </span>
+          </li>
+          {{ partial "header/langs.html" . }}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{ partial "header/search.html" . }}
+</header>

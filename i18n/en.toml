@@ -1,0 +1,48 @@
+#head
+[lng-cde] # lang
+  other = "de"
+[lng-lcl] # meta local
+  other = "de-DE"
+
+#footer
+[ftr-descr]
+  other = "CryptoCasinos.com has no intention that any of the information it provides is used for illegal purposes. It is your own personal responsibility to make sure that all age and other relevant requirements are adhered to before registering with a casino operator. By continuing to use this website you agree to our terms and conditions and privacy policy."
+[cpryt]
+  other = "Copyright © {{.Year}} | All rights reserved"
+[frst-ftr]
+  other = "CRYPTO CASINO SITES"
+[scnd-ftr]
+  other = "CRYPTO CURRENCY GAMBLING"
+[thr-ftr]
+  other = "USEFUL INFORMATION"
+
+
+#casino
+[crt-acce]
+  other = "Cryptos accepted"
+[wlcm-ttle]
+  other = "Welcome Bonus"
+[gt-btn]
+  other = "Get Bonus"
+[gtc-btn]
+  other = "Go to Casino"
+[hghlts-ttle]
+  other = "Highlights"
+[qck-fcts]
+  other = "Quick Facts"
+[prdct-ttle]
+  other = "Product"
+[sftwr-ttle]
+  other = "Software Providers"
+[pymnt-ttle]
+  other = "Payment Methods"
+[tdy-offr]
+  other = "Todays offer"
+
+#home 
+[hm-tp-lst-ttle]
+  other = "Netherlands loves"
+[hm-tp-lst-img]
+  other = "https://cryptocasinos.com/wp-content/themes/cryptocasinos/dist/images/svg/nl.svg"
+[hm-lst-csn-ttle]
+  other = "Top Rated Crypto Casino Sites"

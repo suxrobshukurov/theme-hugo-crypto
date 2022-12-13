@@ -1,0 +1,52 @@
+<section class="hero-section position-relative py-40 " style="background-color: #043760;">
+  <div class="container">
+    <div class="row align-items-center text-center text-lg-left justify-content-between">
+      <div class="col-xl-7">
+        {{ with .Params.prettle }}
+        <p class="fw-300 text-white mb-15 d-none d-lg-block">{{.}}</p>
+        {{ end }}
+        {{ with .Params.h1 }}
+        <h1 class="text-white mb-lg-30 mb-10">{{.}}</h1>
+        {{ end }}
+        {{ with .Params.sbttle }}
+        <div class="paragraph collapse">
+          <div class="text-white pr-xl-40">
+            <p>{{.}}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      <div class="col-xl-3 d-none d-xl-block">
+        <div class="sidebar-toplist">
+          {{ with i18n "hm-tp-lst-ttle" }}
+          <header class="py-10 px-15">
+            <figure class="iso-flag d-inline-block align-middle"
+              style="background-image: url({{i18n `hm-tp-lst-img`}})">
+            </figure>
+            <span class="fs-14 fw-700 text-purple">{{.}}</span>
+          </header>
+          {{ end }}
+          {{$topCasinos := first 3 (shuffle (where (where .Site.RegularPages "Type" "in" "casino") ".Params.hme" "=="
+          true))}}
+          {{ range $topCasinos }}
+          <div class="media position-relative py-10 px-15">
+            <a class="stretched-link" href="{{.Permalink}}" target="_blank">
+              <figure class="position-relative d-block mr-10 h-100" style="background-color:#060314">
+                <img width="1" height="1" src="{{.Params.thbnl | default .Site.Params.DeafultImg}}"
+                  class="attachment-list-square size-list-square" alt="{{.Params.nme}}" title="{{.Params.nme}}"
+                  loading="lazy" />
+              </figure>
+            </a>
+            <div class="media-body">
+              <h2 class="fs-15 fw-700 text-purple mb-0">
+                <a href="{{.Permalink}}" target="_blank">{{.Params.nme}}</a>
+              </h2>
+              <p>{{.Params.wlcm | safeHTML}}</p>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

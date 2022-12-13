@@ -1,0 +1,15 @@
+<div class="collapse" id="search" style="background-color: #01345a;">
+  <div class="container">
+    <form action="{{.Site.BaseURL}}" method="get" class="py-10 position-relative">
+      <input type="hidden" name="post_type[]" value="post">
+      <input type="hidden" name="post_type[]" value="page">
+
+      <input type="hidden" name="post_type[]" value="licenses">
+      <input type="hidden" name="post_type[]" value="money-transfer">
+      <input type="hidden" name="post_type[]" value="news">
+
+      <input type="text" name="s" id="" placeholder="Search here..." value="">
+      <input class="main-button" type="submit" value="Search">
+    </form>
+  </div>
+</div>

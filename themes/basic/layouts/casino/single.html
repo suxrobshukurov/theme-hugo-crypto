@@ -1,0 +1,67 @@
+{{ define "main" }}
+<section class="hero-section best-casinos position-relative pt-60" style="background-color: #043760;">
+  <div class="container">
+    <div class="responsive d-block d-lg-none mb-30">
+      {{ partial "parts/casino-head-mob.html" . }}
+    </div>
+    {{ partial "parts/casino-head-pc.html" . }}
+
+    {{ partial "parts/casino-information.html" . }}
+  </div>
+</section>
+{{ partial "parts/wave.html" . }}
+<article class="casino-review py-lg-60 py-20 pt-lg-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 text-section container  pt-md-20 pb-md-20 pt-10 pb-10">
+        <div class="content">
+          <h1>{{.Params.h1}}</h1>
+          {{.Content}}
+          {{ partial "parts/faqs.html" . }}
+        </div>
+        {{$randCasino := first 1 (shuffle (where (where .Site.RegularPages "Type" "in" "casino") ".Params.nme" "!="
+        .Params.nme))}}
+        {{ range $randCasino }}
+        {{ partial "parts/rand-casino.html" . }}
+        {{ end }}
+
+      </div>
+      {{ partial "parts/aside.html" . }}
+    </div>
+  </div>
+</article>
+<script type="application/ld+json">
+	{
+    "@context": "http://schema.org",
+    "@type": "Review",
+    "datePublished": "{{.Date.Format "2006-01-02T15:04:05"}}",
+    "dateModified": "{{.Lastmod.Format "2006-01-02T15:04:05"}}",
+    "image": "{{.Params.thbnl}}",
+    "url": "{{.Permalink | absURL }}",
+    "itemReviewed": {
+       "@type": "Organization",
+       "name": "{{.Params.nme}}",
+       "image": "{{.Params.thbnl}}",
+       "description": "{{.Params.Descr}}"
+    }
+    ,
+    "author": {
+      "@type": "Person",
+      "image": "{{.Params.thbnl}}",
+      "name": "{{.Site.Params.athr}}"
+    }
+    ,
+    "reviewRating": {
+       "@type": "Rating",
+       "ratingValue": "{{.Params.rtng}}",
+       "worstRating": "1",
+       "bestRating": "10"
+    }
+    ,
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{.Site.BaseURL}}"
+    }
+	}
+</script>
+{{ end }}
