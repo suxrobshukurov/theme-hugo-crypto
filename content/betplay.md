@@ -89,10 +89,6 @@ qck_fct: {
       ttle: "Min withdraw",
       vle: "None"
     },
-    {
-      ttle: "Website",
-      vle: "<a class='fs-13 fw-300 text-grey btn-text-only p-10' href='{{.Params.rff | default .Site.Params.Refferal}}' target='_blank' rel='nofollow'>Claim bonus</a>"
-    },
   ]
 } # факт о казино
 

@@ -39,6 +39,7 @@
 [tdy-offr]
   other = "Todays offer"
 
+
 #home 
 [hm-tp-lst-ttle]
   other = "Netherlands loves"
@@ -46,3 +47,5 @@
   other = "https://cryptocasinos.com/wp-content/themes/cryptocasinos/dist/images/svg/nl.svg"
 [hm-lst-csn-ttle]
   other = "Top Rated Crypto Casino Sites"
+[hm-rt-csn-read]
+  other = "Read the full review"

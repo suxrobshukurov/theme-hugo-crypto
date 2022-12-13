@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://www.example.com'
 languageCode = 'en-us'
 title = 'Best Bitcoin Casinos » Find The Best Crypto Casino '
 theme = "basic"
@@ -24,7 +24,7 @@ paginate = 50
   nme = 'Crypto Casinos'
   referral = 'https://redirectid.com/click.php?key=42t5uehm7vx8tk6nibtr&split='
   athr = "Barbara"
-  CPU = "/"
+  CPU = "https://www.example.com"
 
 
 
