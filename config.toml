@@ -12,6 +12,8 @@ paginate = 50
   [markup.tableOfContents]
     endLevel = 2
     startLevel = 2
+    ordered = true
+
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
@@ -22,7 +24,7 @@ paginate = 50
   defaultImg = '/images/default.png'
   descr = "Looking for the best crypto casinos for 2022? ➤ Updated Daily ✔️ Exclusive Bonuses ✔️ Expert Reviews ✔️ Find the best bitcoin casino for you!"
   nme = 'Crypto Casinos'
-  referral = 'https://redirectid.com/click.php?key=42t5uehm7vx8tk6nibtr&split='
+  ref = 'https://redirectid.com/click.php?key=42t5uehm7vx8tk6nibtr&split='
   athr = "Barbara"
   CPU = "https://www.example.com"
 
@@ -33,15 +35,9 @@ paginate = 50
   weight = 1
   [languages.en.params]
     icon = '/images/flags/gb-nir.svg'
-# [languages.de]
-#   languageName = 'DE'
-#   weight = 2
-#   [languages.de.params]
-#     icon = '/images/flags/de.png'
 
 
 #menu
-
 [[languages.en.menu.main]]
   identifier = 'casino'
   name = 'Casino'
@@ -86,7 +82,7 @@ paginate = 50
 [[languages.en.menu.main]]
   identifier = 'news'
   name = 'News'
-  url = '#'
+  url = '/blog/'
   weight = 7
 
 # menu

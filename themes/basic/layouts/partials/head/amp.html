@@ -1,2 +1,6 @@
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+{{ if .HasShortcode "content" }}
+<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+<meta name="amp-script-src" content="sha384-Jzminty_HY64sTC07VzUXPQ60SuD07ZueNqRVEiPw1l14BF02jI1nWrKhqlJFo6v" />
+{{ end }}

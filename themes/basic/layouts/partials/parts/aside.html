@@ -4,7 +4,7 @@
       {{ with .Params.qck_fct }}
       <div class="quick-facts mb-25">
         <header class="mb-10">
-          <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}} {{.ttle}}" loading="lazy">
+          <amp-img width="17" height="17" class="d-inline-block mr-5 " src="{{.img}}" alt="{{.alt}} {{.ttle}}" ></amp-img>
           <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
         </header>
         <ul>
@@ -20,7 +20,7 @@
       {{ with .Params.shrt_smmry }}
       <div class="introduction mb-25">
         <header class="mb-10">
-          <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}}" title="{{.ttle}}" loading="lazy">
+          <amp-img width="17" height="17" class="d-inline-block mr-5 " src="{{.img}}" alt="{{.alt}} {{.ttle}}" ></amp-img>
           <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
         </header>
         <div class="fs-12 fw-300 lh-24 text-greyBlue">{{.txt | safeHTML}}</div>
@@ -29,7 +29,7 @@
       {{ with .Params.bns_inf }}
       <div class="bonus-info">
         <header class="mb-10">
-          <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}} {{.ttle}}" loading="lazy">
+          <amp-img width="17" height="17" class="d-inline-block mr-5 " src="{{.img}}" alt="{{.alt}} {{.ttle}}" ></amp-img>
           <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
         </header>
         <ul>
@@ -45,7 +45,7 @@
 
     </header>
     <footer class="px-20 pb-10 pt-15 text-center">
-      {{ partial "parts/ref-btn.html" (dict "ref" (.Params.rff) "text" (i18n "gtc-btn")) }}
+      {{ partial "parts/ref-btn.html" (dict "ref" (.Params.ref) "text" (i18n "gtc-btn") "legal" (.Params.legal)) }}
       <div class="new-customer fs-10 py-5">
         <p>{{.Params.trm | safeHTML}}</p>
       </div>

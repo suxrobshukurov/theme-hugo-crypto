@@ -1,5 +1,5 @@
-<button class="main-button d-block text-white fs-13 fw-700 lh-46 text-uppercase mb-lg-15 mb-0"
-  on="tap:AMP.navigateTo(url='{{.ref | default $.Site.Params.Refferal}}', target='_blank')" formtarget="_blank"
-  role="button" tabindex="0">
+{{$on := printf "%s%s%s" `on="tap:AMP.navigateTo(url='` (.ref | default .Site.Params.ref)  ` ', target='_blank')"` }}
+<button class="main-button d-block text-white fs-13 fw-700 lh-46 text-uppercase mb-lg-15 mb-0" role="button"
+  tabindex="0" {{$on | safeHTMLAttr}}>
   {{.text}}
 </button>

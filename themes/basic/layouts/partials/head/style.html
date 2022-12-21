@@ -5,3 +5,6 @@
 {{ if eq .Page.Type "casino" }}
 {{- partial "styles/casino.html" . -}}
 {{ end }}
+{{ if eq .Page.Type "blog" }}
+{{- partial "styles/blog.html" . -}}
+{{ end }}

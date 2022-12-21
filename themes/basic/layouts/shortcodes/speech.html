@@ -1,0 +1,22 @@
+{{$image := .Get "img"}}
+{{$alt := .Get "alt"}}
+{{$date := .Get "date"}}
+
+<div class="container author-speech">
+  <div class="row align-items-center how-we-rate mb-15 ">
+    <div class="col-lg-10">
+      {{.Inner}}
+    </div>
+    {{ with $image }}
+    <div class="col-lg-2">
+      <figure class="text-center">
+        <amp-img width="145" height="145" alt="{{$alt}}"
+          src="{{.}}"></amp-img>
+      </figure>
+    </div>
+    {{ end }}
+  </div>
+  {{ with $date }}
+  <p class="text-right" style="color: #5a6a75;">{{. | safeHTML}}</p>
+  {{ end }}
+</div>

@@ -30,8 +30,8 @@
           {{ range . }}
           <li class="col-6">
             <span class="d-block fs-14 fw-300 text-greyBlue py-5 pl-10 h-100">
-              <img src="{{.img | default .Site.Params.DefaultImg}}" width="20" height="20" alt="{{.alt}}"
-                title="{{.ttle}}" class="webpexpress-processed">
+              <amp-img src="{{.img | default .Site.Params.DefaultImg}}" width="20" height="20" alt="{{.alt}}"
+                title="{{.ttle}}" class="webpexpress-processed"></amp-img>
               {{.ttle}}
             </span>
           </li>
@@ -53,8 +53,8 @@
           {{ range . }}
           <li class="col-6">
             <span class="d-block fs-14 fw-300 text-greyBlue py-5 pl-10 h-100">
-              <img src="{{.img | default .Site.Params.DefaultImg}}" width="20" height="20" alt="{{.alt}}"
-                title="{{.ttle}}">
+              <amp-img src="{{.img | default .Site.Params.DefaultImg}}" width="20" height="20" alt="{{.alt}}"
+                title="{{.ttle}}"></amp-img>
               {{.ttle}}
             </span>
           </li>

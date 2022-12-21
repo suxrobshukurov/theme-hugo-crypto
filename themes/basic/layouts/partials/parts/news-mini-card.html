@@ -1,0 +1,16 @@
+<div class="col-lg-4">
+  <article class="media py-20 px-15">
+    <figure class="position-relative mr-20">
+      <a class="stretched-link" href="{{.Permalink}}">
+        <figure>
+          <amp-img width="1" height="0.8" alt="{{.Params.nme}}" class="attachment-list-square size-list-square"
+            src="{{.Params.icon | default site.Params.DefaultImg}}" layout="responsive"></amp-img>
+        </figure>
+      </a>
+    </figure>
+    <div class="media-body">
+      <h3 class="fs-15 lh-20 text-purple"><a href="{{.Permalink}}">{{.Params.nme}}</a></h3>
+      <a class="fs-13 fw-300 text-grey btn-text-only" href="{{.Permalink}}">{{i18n "other-read"}}</a>
+    </div>
+  </article>
+</div>

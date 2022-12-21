@@ -44,3 +44,35 @@
       "image" : "{{ .Params.thbnl | default .Site.Params.logo }}"
     }
 </script>
+
+{{if .HasShortcode "content" }}
+<script id="navigation" type="text/plain" target="amp-script">
+  let contents = '';
+  let hasContent = false;
+  const elHeaders = document.querySelectorAll('h2');
+  const tocBtn = document.querySelector('.show-toc')
+  const container = document.querySelector('#content-nav')
+  if(container && tocBtn) {
+  tocBtn.addEventListener('click', () => {
+    elHeaders.forEach((el, index) => {
+      if (!el.id) {
+      el.id = `id-${index}`;
+      }
+      const url = `${location.href.split('#')[0]}#${el.id}`;
+      contents += `<li><span on="tap:${el.id}.scrollTo(duration=200)" role="button" tabindex="0">
+        ${el.textContent}
+      </span></li>`;
+    });
+    if (!hasContent) {
+    const ol = document.createElement('ol');
+    ol.classList.add('toc-list');
+    ol.innerHTML = contents;
+    container.appendChild(ol);
+    hasContent = true;
+    } else {
+      return;
+    }
+  });
+  }
+  </script>
+{{end}}

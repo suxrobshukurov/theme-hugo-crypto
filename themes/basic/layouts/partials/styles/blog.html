@@ -2823,27 +2823,12 @@
     box-shadow: 0 2px 8px 0 rgba(33, 36, 38, 0.1);
   }
 
-
-  @media (max-width: 991.98px) {
-    .table-contents .somenav span {
-      pointer-events: inherit;
-      cursor: pointer;
-    }
-
-    .table-contents .somenav span:before {
-      content: '';
-      position: absolute;
-      width: 7px;
-      height: 7px;
-      border-top: 2px solid #5a6a75;
-      border-left: 2px solid #5a6a75;
-      -webkit-transform: rotate(225deg);
-      -ms-transform: rotate(225deg);
-      transform: rotate(225deg);
-      top: 20px;
-      right: 15px;
-    }
+  .table-contents .somenav button {
+    background: transparent;
+    border: none;
+    text-align: left;
   }
+
 
   .table-contents .somenav nav {
     counter-reset: numbers;
@@ -2874,6 +2859,7 @@
     visibility: hidden;
     padding-left: 15px;
   }
+
   .somenav .toc-list li {
     padding-left: 10px;
     cursor: pointer;
@@ -2888,8 +2874,9 @@
     background: transparent;
     border: none;
   }
+
   .content a {
-    color:#337dd7
+    color: #337dd7
   }
 
   .somenav.open .show-toc:before {
@@ -3038,32 +3025,36 @@
     padding: 0 10px 15px 30px;
   }
 
-  .hero-section h2 {
-    font-size: 15px;
-  }
-  .author-speech {
-    background-color: #fff;
-    margin-bottom: 25px;
-    padding: 30px;
-  }
-
   @media (max-width: 991.98px) {
     .hero-section h2 {
       font-size: 15px;
     }
   }
 
-  .best-casinos .casino-holder .order {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 30px;
-    line-height: 30px;
-    background-color: #043760;
-    color: #fff;
-    font-weight: 500;
-    border-radius: 50%;
-    text-align: center;
+  .intro-section .date {
+    background-image: url(/images/icons/refresh.svg);
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: contain;
+  }
+
+  @media (min-width: 992px) {
+    .offset-lg-3 {
+      margin-left: 25%;
+    }
+  }
+
+  .campaign-news article {
+    box-shadow: 0 2px 8px 0 rgb(33 36 38 / 10%);
+    background-color: #fff;
+    border-radius: 4px;
+  }
+
+  .campaign-news article figure {
+    width: 90px;
+    height: 70px;
+    border-radius: 4px;
+    overflow: hidden;
   }
 
 </style>

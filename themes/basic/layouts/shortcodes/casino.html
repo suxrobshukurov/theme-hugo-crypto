@@ -1,0 +1,107 @@
+{{$path := .Get 0}}
+{{$title := .Get 1}}
+{{$page := .Site.GetPage $path }}
+
+{{ with $page }}
+<div class="top-casino position-relative z-index-3 mt-md-50 mb-md-50 mt-50 mb-50">
+  <div class="best-casinos mt-md-50 mb-md-50 mt-50 mb-50">
+    <div class="container">
+      <div class="casino-holder pt-lg-30 pt-20 px-lg-20 px-10 position-relative">
+        <figure class="casino-of-month position-absolute">
+          <amp-img alt="Casino Ribbon Icon" src="/images/icons/casino-of-month.svg" height="36" width="36"></amp-img>
+        </figure>
+        {{ with $title }}
+        <div class="position-absolute tag-mnt fs-14 fw-700 text-white background-green text-uppercase px-25 py-5">
+          {{.}}
+        </div>
+        {{ end }}
+        <div class="line position-absolute background-blue d-lg-block d-none"></div>
+        {{ with .Params.rtng }}
+        <div class="rating position-absolute background-blue text-center">
+          <amp-img width="10" height="10" alt="Star Icon" src="/images/icons/star.svg"></amp-img>
+          <p class="fs-18 fw-700 text-white">{{.}}</p>
+        </div>
+        {{ end }}
+
+        <div class="row justify-content-between pb-lg-20">
+          <div class="col-lg-4">
+            <div class="media pt-10 mb-10 mb-lg-0">
+              <a href="{{.Params.ref}}" target="_blank" rel="nofollow">
+                <figure class="position-relative d-block mr-20"
+                  style="background-color:{{.Params.bg_color | default `#000000`}}">
+                  <amp-img width="1" height="1" alt="{{.Params.nme}}" class="size-list-square " layout="responsive"
+                    src="{{.Params.icon}}"></amp-img>
+                </figure>
+              </a>
+              <div class="media-body">
+                <h3 class="fw-700 text-closeBlack2 mb-lg-5 mb-0">
+                  <a href="{{.Params.ref}}" target="_blank" rel="nofollow">{{.Params.Nme}}</a>
+                </h3>
+                {{ with i18n "crt-acce" }}<span class="fs-11 text-purple">{{.}}</span>{{ end }}
+                {{ if .Params.crpts }}
+                <ul class="nav row cryptos">
+                  {{ range .Params.crpts }}
+                  <li class="col-auto">
+                    <amp-img alt="{{.img}}" title="{{.ttle}}" src="{{.img}}" width="20" height="20"></amp-img>
+                  </li>
+                  {{ end }}
+                </ul>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 px-0 px-lg-10">
+            <div class="welcome-bonus text-center text-lg-left p-20 mx-lg-n20">
+              <a class="stretched-link" target="_blank" rel="nofollow" href="{{.Params.ref}}">
+                {{ with i18n "wlcm-ttle" }}<span class="fs-14 fw-300 text-greyBlue text-uppercase">{{.}}</span>{{ end }}
+                {{ with .Params.wlcm }}
+                <p>{{. | safeHTML}}</p>
+                {{ end }}
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 text-center px-0 px-lg-10">
+            <div class="buttons pb-5">
+              {{ partial "parts/ref-btn.html" (dict "legal" (.Params.legal) "ref" (.Params.ref) "text" (i18n "gt-btn")) }}
+
+              <a class="btn-text-only fw-300 text-blue text-uppercase px-10" href="{{.Permalink}}">{{i18n
+                "hm-bs-csn-read"}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="cas-m-holder mx-n10 mx-lg-0 border-top">
+          <div class="p-lg-20 p-10 custom-body">
+            <div class="row">
+              {{ with .Params.hghlts }}
+              <div class="col-lg-3">
+                <div class="highlights highlights-of-month mb-30 mb-lg-0">
+                  {{ with i18n "hghlts-ttle" }}
+                  <span class="fs-14 fw-300 text-greyBlue text-uppercase">{{.}}</span>
+                  {{ end }}
+                  <ul class="fs-14 fw-600 lh-26 text-closeBlack2">
+                    {{ range . }}<li class="pl-30">{{.}}</li>{{ end }}
+                  </ul>
+                </div>
+              </div>
+              {{ end }}
+              {{ with .Params.shrt_smmry }}
+              <div class="col-lg-9">
+                <span class="fs-14 fw-300 text-greyBlue text-uppercase">{{.ttle}}</span>
+                <div class="fs-12 fw-300 lh-24 text-greyBlue">{{.txt | safeHTML}}</div>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        {{ with .Params.trm }}
+        <div class="new-customer fs-10 py-5 text-lg-left text-center">
+          <p>{{. | safeHTML}}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

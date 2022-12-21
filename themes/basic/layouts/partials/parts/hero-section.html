@@ -26,15 +26,14 @@
             <span class="fs-14 fw-700 text-purple">{{.}}</span>
           </header>
           {{ end }}
-          {{$topCasinos := first 3 (shuffle (where (where .Site.RegularPages "Type" "in" "casino") ".Params.hme" "=="
+          {{$topCasinos := first 3 (shuffle (where (where .Site.RegularPages "Type" "casino") ".Params.home" "=="
           true))}}
           {{ range $topCasinos }}
           <div class="media position-relative py-10 px-15">
             <a class="stretched-link" href="{{.Permalink}}" target="_blank">
-              <figure class="position-relative d-block mr-10 h-100" style="background-color:#060314">
-                <img width="1" height="1" src="{{.Params.thbnl | default .Site.Params.DeafultImg}}"
-                  class="attachment-list-square size-list-square" alt="{{.Params.nme}}" title="{{.Params.nme}}"
-                  loading="lazy" />
+              <figure class="position-relative d-block mr-10 h-100" style="background-color:{{.Params.bg_color}}">
+                <amp-img width="42" height="40" src="{{.Params.thbnl | default .Site.Params.DeafultImg}}"
+                  class="attachment-list-square size-list-square" alt="{{.Params.nme}}" title="{{.Params.nme}}"></amp-img>
               </figure>
             </a>
             <div class="media-body">

@@ -2,7 +2,7 @@
   {{ partial "parts/rating-pc.html" . }}
   <div class="row justify-content-between align-items-center mb-30">
     <div class="col-2">
-      <a class="fs-22 fw-700 text-closeBlack2 mb-5" href="{{.Params.rff | default .Site.Params.Refferal}}"
+      <a class="d-block fs-22 fw-700 text-closeBlack2 mb-5" href="{{.Params.ref | default .Site.Params.Refferal}}"
         target="_blank" rel="nofollow">
         {{.Params.nme}}
       </a>
@@ -17,14 +17,14 @@
     </div>
     <div class="col">
       <div class="welcome-bonus bg-none mt-20 p-20 text-center">
-        <a href="{{.Params.rff | default .Site.Params.Refferal}}" target="_blank" rel="nofollow">
+        <a href="{{.Params.ref | default .Site.Params.Refferal}}" target="_blank" rel="nofollow">
           <figure class="header-image mb-10 mt-n60" style="background-color:#060314">
-            <img width="1" height="1" src="{{.Params.thbnl | default .Site.Params.DefaultImg}}"
-              class="attachment-list-square size-list-square" alt="{{.Params.Nme | default .Site.Params.nme}}"
-              loading="lazy" />
+            <amp-img width="1" height="1" src="{{.Params.thbnl | default .Site.Params.DefaultImg}}"
+              class="size-list-square" alt="{{.Params.Nme | default .Site.Params.nme}}"
+              layout="responsive" ></amp-img>
           </figure>
         </a>
-        <a target="_blank" rel="nofollow" href="{{.Params.rff | default .Site.Params.Refferal}}">
+        <a target="_blank" rel="nofollow" href="{{.Params.ref | default .Site.Params.Refferal}}">
           <span class="fs-14 fw-300 text-greyBlue text-uppercase">{{i18n "wlcm-ttle"}}</span>
           <p>{{.Params.wlcm | safeHTML}}</p>
         </a>
@@ -32,7 +32,7 @@
     </div>
     <div class="col-4 text-center">
       <div class="buttons" id="quick-facts">
-        {{ partial "parts/ref-btn.html" (dict "ref" (.Params.rff) "text" (i18n "gt-btn")) }}
+        {{ partial "parts/ref-btn.html" (dict "legal" (.Params.legal) "ref" (.Params.ref) "text" (i18n "gtc-btn")) }}
         {{ with i18n "qck-fcts" }}
         <a class="quick-facts fs-13 fw-300 text-blue text-uppercase px-10 move" href="#quick">{{.}}</a>
         {{ end }}

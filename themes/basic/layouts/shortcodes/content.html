@@ -1,0 +1,18 @@
+<amp-script layout="container" script="navigation">
+  <div class="text-section content  pt-md-20 pb-md-20 pt-10 pb-10">
+    <div class="container">
+      <div class="row table-contents">
+        <div class="col-lg-3 mb-30 mb-lg-0 order-lg-2">
+          <nav class="somenav sticky-top ml-lg-20" id="content-nav">
+            <span class="fs-11 fw-300 text-grey text-uppercase navbar-brand">{{i18n "page-nav"}} <button
+                class="show-toc" data-show="[{{ i18n `toc-btn-show`}}]" data-hide="[{{ i18n `toc-btn-hide`}}]"
+                on="tap:content-nav.toggleClass(class='open')" role="button" tabindex="0"></button></span>
+          </nav>
+        </div>
+        <div class="col-lg-9 order-lg-1">
+          <div class="content">{{.Inner }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</amp-script>

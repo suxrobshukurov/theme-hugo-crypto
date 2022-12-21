@@ -6,10 +6,8 @@
         <div class="col-lg-3 mb-20 mb-lg-0">
           {{ if .Site.Params.Footer_logo }}
           <figure class="mb-25 position-relative">
-            <figure>
-              <img width="203" height="34" src="{{.Site.Params.footer_logo}}" class="attachment-full size-full"
-                alt="{{.Site.Params.nme}}" />
-            </figure>
+            <amp-img width="1" height="0.2" src="{{.Site.Params.footer_logo}}" class="attachment-full size-full"
+              alt="{{.Site.Params.nme}}" layout="responsive"></amp-img>
           </figure>
           {{else}}
           <div class="logo text-white mb-20">{{.Site.Params.Nme}}</div>
@@ -34,7 +32,7 @@
         <div class="col-lg-auto mb-10 mb-lg-0">
           <div class="row justify-content-center">
             <div class="col-auto">
-              <img width="20" height="20" src="/images/18+.svg" alt="18+ icon">
+              <amp-img width="20" height="20" src="/images/18+.svg" alt="18+ icon"></amp-img>
             </div>
           </div>
         </div>

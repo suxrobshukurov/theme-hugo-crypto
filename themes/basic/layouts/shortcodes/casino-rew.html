@@ -1,0 +1,131 @@
+{{$path := .Get 0}}
+{{$title := .Get 1}}
+{{$page := .Site.GetPage $path }}
+
+{{ with $page }}
+<section class="best-casinos py-30">
+  <div class="container">
+    <div class="casino-holder position-relative p-10 p-lg-30">
+      <div class="row">
+        <div class="col-lg-9">
+          <header class="position-relative p-20 mb-30 best-casinos-header">
+            {{ with .Params.rtng }}
+            <div class="rating rating-review position-absolute background-blue text-center">
+              <amp-img width="10" height="10" alt="Star Icon" src="/images/icons/star.svg"></amp-img>
+              <p class="fs-18 fw-700 text-white">{{.}}</p>
+            </div>
+            {{ end }}
+
+            <div class="d-lg-flex align-items-center justify-content-between">
+              <div class="d-lg-flex align-items-center">
+                <a class="position-relative mr-10" href="{{.Params.ref | default site.Params.ref}}" target="_blank"
+                  rel="nofollow">
+                  <figure class="position-relative text-center">
+                    <amp-img width="90" height="90" alt="{{.Params.nme}}" title="{{.Params.nme}}"
+                      class="attachment-list-square size-list-square" src="{{.Params.icon}}"></amp-img>
+                  </figure>
+                </a>
+                <a href="{{.Permalink}}">
+                  <h3 class="fw-700">{{.Params.nme}}</h3>
+                </a>
+
+              </div>
+              <div class="d-lg-flex align-items-center">
+                {{ with site.Params.athr }}
+                <p class="mr-20">{{i18n "reviewed"}}: <strong class="fw-700">{{.}}</strong></p>
+                {{ end }}
+                <p class="">{{i18n "updated"}}: <strong class="fw-700">{{.Lastmod.Format "02 January, 2006"}}</strong>
+                </p>
+              </div>
+            </div>
+          </header>
+          <div class="text-section content">
+            {{$.Inner}}
+
+            {{ with .Params.annony }}
+            <span class="h2"><b>{{i18n "annony" }}</b></span>
+            {{. | safeHTML}}
+            {{ end }}
+            {{ with .Params.reputat }}
+            <span class="h2"><b>{{i18n "reputat" }}</b></span>
+            {{. | safeHTML}}
+            {{ end }}
+            {{ if or (.Params.plss) (.Params.mnss) }}
+
+            <span class="h2"><b>{{i18n "pros-cons" }}</b></span>
+            {{ with .Params.plss }}
+            <p><b>{{.ttle}}</b></p>
+            <ul>
+              {{ range .items }}
+              <li>{{. | safeHTML}}</li>
+              {{ end }}
+            </ul>
+            {{ end }}
+            {{ with .Params.mnss }}
+            <p><b>{{.ttle}}</b></p>
+            <ul>
+              {{ range .items }}
+              <li>{{. | safeHTML}}</li>
+              {{ end }}
+            </ul>
+            {{ end }}
+
+            {{ end }}
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="position-sticky p-15 best-casinos-header" style="top: 60px;">
+            {{ if .Params.icon }}
+            <div class="position-relative">
+              <a href="{{.Params.ref}}" target="_blank" rel="nofollow">
+                <figure class="position-relative text-center mb-15"
+                  style="background-color:{{.Params.bg_color | default `#060314`}}">
+                  <amp-img width="90" height="90" alt="{{.Params.nme}}" title="{{.Params.nme}}"
+                    class="attachment-list-square size-list-square" src="{{.Params.icon}}"></amp-img>
+                </figure>
+              </a>
+            </div>
+            {{ end }}
+
+            <div class="welcome-bonus text-center position-relative p-15">
+              <a class="stretched-link" target="_blank" rel="nofollow" href="{{.Params.ref}}">
+                {{ with i18n "wlcm-ttle" }}
+                <span class="fs-14 fw-300 text-greyBlue text-uppercase">{{.}}</span>
+                {{ end }}
+                {{ with .Params.wlcm }}
+                <p>{{. | safeHTML}}</p>
+                {{ end }}
+              </a>
+            </div>
+            <div class="custom-body px-10 py-15">
+              <ul>
+                {{ range .Params.qck_fct.itms }}
+                <li class="row align-items-center mb-5">
+                  <span class="col-lg-6 fs-12 fw-300 text-greyBlue p-lg-10 px-5">{{.ttle}}:</span>
+                  <span class="col-lg-6 fs-13 fw-600 text-closeBlack p-lg-10 px-5">{{.vle}}</span>
+                </li>
+                {{ end }}
+                {{ range .Params.bns_inf.itms }}
+                <li class="row align-items-center mb-5">
+                  <span class="col-lg-6 fs-12 fw-300 text-greyBlue p-lg-10 px-5">{{.ttle}}:</span>
+                  <span class="col-lg-6 fs-13 fw-600 text-closeBlack p-lg-10 px-5">{{.vle}}</span>
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+            <div class="mb-5">
+              {{ partial "parts/ref-btn.html" (dict "legal" (.Params.legal) "ref" (.Params.ref) "text" (i18n "gt-btn"))
+              }}
+
+            </div>
+            <div class="text-center">
+              <a class="read-review fs-13 fw-300 text-blue btn-text-only" href="{{.Permalink}}">{{i18n
+                "hm-bs-csn-read"}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{end}}

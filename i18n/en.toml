@@ -39,6 +39,14 @@
 [tdy-offr]
   other = "Todays offer"
 
+#blog
+
+[other-news]
+  other = "Related News"
+[other-news-mobile]
+  other = "News"
+[other-read]
+  other = "Read more"
 
 #home 
 [hm-tp-lst-ttle]
@@ -49,3 +57,28 @@
   other = "Top Rated Crypto Casino Sites"
 [hm-rt-csn-read]
   other = "Read the full review"
+[hm-bs-csn-read]
+  other = "Read Review"
+
+# SHORTCODES
+# casinos-rew
+[reviewed]
+  other = "Reviewed by"
+[updated]
+  other = "Updated"
+[annony]
+  other = "Anonymity"
+[reputat]
+  other = "Reputation"
+[pros-cons]
+  other = "Pros and Cons"
+
+#content 
+[page-nav]
+  other = "Table of Contents"
+[toc-btn-show]
+  other = 'Show'
+[toc-btn-hide]
+  other = 'Hide'
+
+

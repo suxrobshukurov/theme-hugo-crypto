@@ -7,17 +7,16 @@
       <div class="col-lg-2">
         <div class="media mb-10 mb-lg-0 mt-n40 align-items-center">
           <figure class="circle mr-10 mr-lg-0 position-relative casino-logo" style="background-color: #060314">
-            <a class="stretched-link" href="{{.Params.rff | default .Site.Params.Refferal}}" target="_blank"
+            <a class="stretched-link" href="{{.Params.ref | default .Site.Params.Refferal}}" target="_blank"
               rel="nofollow">
-              <figure class="header-image" style="background-color:#060314">
-                <img width="1" height="1" src="{{.Params.thbnl | default .Site.Params.DefaultImg}}"
-                  class="attachment-list-square size-list-square" alt="{{.Params.Nme | default .Site.Params.nme}}"
-                  loading="lazy" />
-              </figure>
-            </a>
+              <amp-img width="1" height="1" src="{{.Params.thbnl | default .Site.Params.DefaultImg}}"
+                class=" size-list-square" alt="{{.Params.Nme | default .Site.Params.nme}}" layout="responsive">
+              </amp-img>
+          </figure>
+          </a>
           </figure>
           <div class="media-body d-lg-none d-block">
-            <span class="text-white mt-10 mb-0"><a href="{{.Params.rff | default .Site.Params.Refferal}}"
+            <span class="text-white mt-10 mb-0"><a href="{{.Params.ref | default .Site.Params.Refferal}}"
                 target="_blank" rel="nofollow">{{.Params.Nme | default .Site.Params.nme}}</a>
             </span>
             <span class="fs-11 text-purple">{{ i18n "crt-acce"}}</span>
@@ -27,7 +26,7 @@
       </div>
       <div class="col-lg-6">
         <div class="welcome-bonus bg-none p-lg-20 p-10 mb-10 mb-lg-0 text-center">
-          <a href="{{.Params.rff | default .Site.Params.Refferal}}" target="_blank" rel="nofollow">
+          <a href="{{.Params.ref | default .Site.Params.Refferal}}" target="_blank" rel="nofollow">
             <span class="text-greyBlue text-uppercase">{{i18n "wlcm-ttle"}}</span>
             <p>{{.Params.wlcm | safeHTML}}</p>
           </a>
@@ -35,7 +34,7 @@
       </div>
       <div class="col-lg-3 text-center">
         <div class="buttons">
-          {{ partial "parts/ref-btn.html" (dict "ref" (.Params.rff) "text" (i18n "gt-btn")) }}
+          {{ partial "parts/ref-btn.html" (dict "legal" (.Params.legal) "ref" (.Params.ref) "text" (i18n "gt-btn")) }}
         </div>
       </div>
     </div>
@@ -50,7 +49,8 @@
   <header id="mob-summary-title" class="collapsed" aria-controls="introduction"
     on="tap:mob-summary-title.toggleClass(class='collapsed'),introduction.toggleClass(class='show')" role="accordion"
     tabindex="0">
-    <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}}" title="{{.ttle}}" loading="lazy">
+    <amp-img class="d-inline-block mr-5 mt-5" src="{{.img}}" alt="{{.alt}}" title="{{.ttle}}" width="17"
+      height="17"></amp-img>
     <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
   </header>
   <div class="fs-12 fw-300 lh-24 text-greyBlue collapse" id="introduction">{{.txt | safeHTML}}</div>
@@ -61,7 +61,8 @@
 <div class="introduction position-relative border-bottom p-15">
   <header id="mob-quick-fact-title" class="collapsed" role="accordion" tabindex="0" aria-controls="quick_fact"
     on="tap:mob-quick-fact-title.toggleClass(class='collapsed'),quick_fact.toggleClass(class='show')" role="accordion">
-    <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}} {{.ttle}}" loading="lazy">
+    <amp-img class="d-inline-block mr-5 mt-5" src="{{.img}}" alt="{{.alt}}" title="{{.ttle}}" width="17"
+      height="17"></amp-img>
     <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
   </header>
   <div class="collapse" id="quick_fact">
@@ -82,7 +83,8 @@
 <div class="introduction position-relative border-bottom p-15">
   <header id="mob-bonus-info-title" class="collapsed" role="accordion" tabindex="0" aria-controls="bonus_info"
     on="tap:mob-bonus-info-title.toggleClass(class='collapsed'),bonus_info.toggleClass(class='show')" role="accordion">
-    <img class="d-inline-block mr-5" src="{{.img}}" alt="{{.alt}} {{.ttle}}" loading="lazy">
+    <amp-img class="d-inline-block mr-5 mt-5" src="{{.img}}" alt="{{.alt}}" title="{{.ttle}}" width="17"
+      height="17"></amp-img>
     <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
   </header>
   <div class="collapse" id="bonus_info">

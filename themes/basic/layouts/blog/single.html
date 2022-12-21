@@ -1,0 +1,68 @@
+{{ define "main" }}
+<main>
+  <section class="hero-section position-relative py-40 intro-section" style="background-color: #043760;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-3 col-lg-6 mb-15 mb-lg-0">
+          <amp-img width="1" height="0.8" alt="{{.Params.nme}}"
+            class="attachment-news_feat size-news_feat wp-post-image"
+            src="{{.Params.thbnl |  default site.Params.defaultImg}}" layout="responsive"></amp-img>
+        </div>
+
+        <div class="col-lg-6">
+          {{ with .Params.h1 }}
+          <h1 class="fs-27 text-white mb-lg-20">{{.}}</h1>
+          {{ end }}
+          <span class="date fs-12 fw-300 pl-30 text-white">{{.Lastmod.Format "02 January 2006"}}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ partial "parts/wave.html" . }}
+  <article>
+    <div class="container">
+      <div class="row table-contents pt-lg-30 pt-20 mb-lg-50 mb-10">
+        <div class="col-lg-3 mb-30 mb-lg-0">
+          <nav class="somenav sticky-top mr-lg-20 open">
+            {{ with i18n "page-nav" }}
+            <span class="fs-11 fw-300 text-grey text-uppercase navbar-brand">{{.}}</span>
+            {{ end }}
+            {{$toc := .TableOfContents}}
+            {{$toc = replace $toc `<a ` `<button `}}
+            {{$toc = replace $toc `href="#` `on=tap:` }} 
+            {{$toc = replace $toc `"` `.scrollTo(duration=400)` }} 
+            {{$toc = replace $toc `<button` `<button role="button" tabindex="0" ` }} 
+            {{$toc = replace $toc `<nav id=.scrollTo(duration=400)TableOfContents.scrollTo(duration=400)>` `<nav>` }} 
+            {{$toc | safeHTML}}
+          </nav>
+        </div>
+        <div class="col-lg-9">
+          <div class="content">
+            {{.Content}}
+          </div>
+        </div>
+      </div>
+      {{$posts := first 3 (shuffle (where (where .Site.RegularPages "Type" "blog") ".Params.nme" "!=" .Params.nme))}}
+      {{if $posts}}
+      <section class="campaign-news offset-lg-3 mb-lg-50 mb-10">
+        <div class="news-holder">
+          {{ with i18n "other-news" }}
+          <h2 class="d-none d-lg-block fs-27 text-closeBlack mb-15">{{.}}</h2>
+          {{ end }}
+
+          {{ with i18n "other-news-mobile" }}
+          <h2 class="d-block d-lg-none fs-14 fw-300 text-uppercase text-greyBlue mb-lg-0 mb-10">{{.}}</h2>            
+          {{ end }}
+
+          <div class="row">
+            {{ range $posts }}
+            {{ partial "parts/news-mini-card.html" . }}
+            {{ end }}
+          </div>
+        </div>
+      </section>
+      {{end}}
+    </div>
+  </article>
+</main>
+{{ end }}

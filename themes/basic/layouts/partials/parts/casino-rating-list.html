@@ -22,7 +22,7 @@
       <div class="row justify-content-between pb-lg-20">
         <div class="col-lg-4 mb-5 mb-lg-0">
           <div class="media mb-10 mb-lg-0">
-            <a href="{{.Params.rff}}" target="_blank" rel="nofollow">
+            <a href="{{.Params.ref}}" target="_blank" rel="nofollow">
               <figure class="position-relative d-block h-100 mr-lg-20 mr-10 pb-lg-90 pb-60"
                 style="background-color:{{.Params.Bg_color}};">
                 <amp-img width="1" height="1" src="{{.Params.icon | default .Params.thbnl}}" layout="responsive"
@@ -30,7 +30,7 @@
               </figure>
             </a>
             <div class="media-body">
-              <h3 class="fw-700 text-closeBlack2 mb-lg-5 mb-0"><a href="{{.Params.rff}}"
+              <h3 class="fw-700 text-closeBlack2 mb-lg-5 mb-0"><a href="{{.Params.ref}}"
                   rel="nofollow">{{.Params.nme}}</a></h3>
               {{ with i18n "crt-acce" }}
               <span class="fs-11 text-purple">{{.}}</span>
@@ -47,7 +47,7 @@
         </div>
         <div class="col-lg-4 px-0 px-lg-10">
           <div class="welcome-bonus text-center text-lg-left p-20 mx-lg-n20">
-            <a class="stretched-link" target="_blank" href="{{.Params.rff}}" rel="nofollow">
+            <a class="stretched-link" target="_blank" href="{{.Params.ref}}" rel="nofollow">
               {{ with i18n "wlcm-ttle" }}
               <span class="fs-14 fw-300 text-greyBlue text-uppercase">{{.}}</span>
               {{ end }}
@@ -73,7 +73,7 @@
         </div>
         <div class="col-lg-2 text-center px-0 px-lg-10">
           <div class="buttons pb-5">
-            {{ partial "parts/ref-btn.html" (dict "ref" (.Params.rff) "text" (i18n "gt-btn")) }}
+            {{ partial "parts/ref-btn.html" (dict "ref" (.Params.ref) "legal" (.Params.legal) "text" (i18n "gt-btn")) }}
             {{ with i18n "qck-fcts" }}
             <button class="quick-facts fs-13 fw-300 text-blue text-uppercase px-10" role="button" tabindex="0" {{$on |
               safeHTMLAttr}}>{{.}}</button>
@@ -84,13 +84,13 @@
       <div class="collapse mx-lg-n20 mx-n10" id="collapseCasino{{$key}}">
         <div class="p-lg-20 p-10 custom-body" style="background-color: #fff">
           <div class="row no-gutters-lg justify-content-between">
-            {{ with .Params.shrt_smmry }}
+            {{ if .Params.shrt_smmry }}
             <div class="col-lg-7 mb-15 mb-lg-0 order-lg-2 order-3">
               <header class="mb-10">
-                <amp-img alt="{{.alt}}" title="{{.ttle}}" width="17" height="17" src="{{.img}}"
+                <amp-img alt="{{.Params.shrt_smmry.alt}}" title="{{.Params.shrt_smmry.ttle}}" width="17" height="17" src="{{.Params.shrt_smmry.img}}"
                   class="d-inline-block mr-5"></amp-img>
-                <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block p-r b-3">{{.ttle}}</span>
-                <div class="fs-12 fw-300 lh-24 text-greyBlue pb-30">{{.txt | safeHTML}}</div>
+                <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block p-r b-3">{{.Params.shrt_smmry.ttle}}</span>
+                <div class="fs-12 fw-300 lh-24 text-greyBlue pb-30">{{.Params.shrt_smmry.txt | safeHTML}}</div>
                 <a class="read-review fs-13 fw-300 text-blue btn-text-only position-absolute"
                   href="{{.Permalink}}">{{i18n
                   "hm-rt-csn-read"}}</a>

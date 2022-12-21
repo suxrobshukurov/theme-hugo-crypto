@@ -17,7 +17,6 @@
         <div class="content">
           <h1>{{.Params.h1}}</h1>
           {{.Content}}
-          {{ partial "parts/faqs.html" . }}
         </div>
         {{$randCasino := first 1 (shuffle (where (where .Site.RegularPages "Type" "in" "casino") ".Params.nme" "!="
         .Params.nme))}}

@@ -2,7 +2,7 @@
 <ul class="nav row cryptos">
   {{ range . }}
   <li class="col-auto">
-    <img src="{{ .img }}" alt="{{ .alt }}" title="{{.ttle}}" loading="lazy" data-tooltip="{{.ttle}}">
+    <amp-img width="20" height="20" src="{{ .img }}" alt="{{ .alt }}" title="{{.ttle}}" ></amp-img>
   </li>
   {{ end }}
 </ul>

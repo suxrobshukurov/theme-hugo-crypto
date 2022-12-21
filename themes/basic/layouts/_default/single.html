@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{ partial "parts/hero-section.html" . }}
+{{ partial "parts/wave.html" . }}
+<section>
+  <article>
+    {{.Content}}
+  </article>
+</section>
+{{ end }}
