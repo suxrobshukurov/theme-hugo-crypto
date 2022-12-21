@@ -47,8 +47,8 @@
 {{ with .Params.shrt_smmry }}
 <div class="introduction position-relative border-bottom p-15">
   <header id="mob-summary-title" class="collapsed" aria-controls="introduction"
-    on="tap:mob-summary-title.toggleClass(class='collapsed'),introduction.toggleClass(class='show')" role="accordion"
-    tabindex="0">
+    on="tap:mob-summary-title.toggleClass(class='collapsed'),introduction.toggleClass(class='show')" role="button"
+    tabindex="0" aria-label="{{.ttle}}">
     <amp-img class="d-inline-block mr-5 mt-5" src="{{.img}}" alt="{{.alt}}" title="{{.ttle}}" width="17"
       height="17"></amp-img>
     <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
@@ -59,8 +59,8 @@
 {{/* Quick facts */}}
 {{ with .Params.qck_fct }}
 <div class="introduction position-relative border-bottom p-15">
-  <header id="mob-quick-fact-title" class="collapsed" role="accordion" tabindex="0" aria-controls="quick_fact"
-    on="tap:mob-quick-fact-title.toggleClass(class='collapsed'),quick_fact.toggleClass(class='show')" role="accordion">
+  <header id="mob-quick-fact-title" class="collapsed" role="button" tabindex="0" aria-controls="quick_fact"
+    on="tap:mob-quick-fact-title.toggleClass(class='collapsed'),quick_fact.toggleClass(class='show')" role="button" aria-label="{{.ttle}}">
     <amp-img class="d-inline-block mr-5 mt-5" src="{{.img}}" alt="{{.alt}}" title="{{.ttle}}" width="17"
       height="17"></amp-img>
     <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>
@@ -81,8 +81,8 @@
 {{/* Bonus Information */}}
 {{ with .Params.bns_inf }}
 <div class="introduction position-relative border-bottom p-15">
-  <header id="mob-bonus-info-title" class="collapsed" role="accordion" tabindex="0" aria-controls="bonus_info"
-    on="tap:mob-bonus-info-title.toggleClass(class='collapsed'),bonus_info.toggleClass(class='show')" role="accordion">
+  <header id="mob-bonus-info-title" class="collapsed" role="button" tabindex="0" aria-controls="bonus_info"
+    on="tap:mob-bonus-info-title.toggleClass(class='collapsed'),bonus_info.toggleClass(class='show')" role="button" aria-label="{{.ttle}}">
     <amp-img class="d-inline-block mr-5 mt-5" src="{{.img}}" alt="{{.alt}}" title="{{.ttle}}" width="17"
       height="17"></amp-img>
     <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block">{{.ttle}}</span>

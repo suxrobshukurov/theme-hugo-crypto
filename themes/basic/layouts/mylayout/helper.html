@@ -1,0 +1,224 @@
+{{ define "main" }}
+<style>
+  .main_nav.local_nav.fixed_nav {
+    display: none;
+  }
+
+  .main .row:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  .main .row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 3fr;
+    border-bottom: 1px solid #ccc;
+    gap: 20px;
+  }
+
+  .main .grid-table .casino-main-info {
+    display: block;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .main {
+    margin: 40px 0;
+  }
+
+  .main a {
+    color: red;
+  }
+
+</style>
+<main class="main">
+  <div class="container">
+    <div class="content-block content-text">
+      <h2 id="shortcode">Шорткоды</h2>
+      <div class="grid-table">
+        {{/* header */}}
+        <div class="row">
+          <div class="col"><strong>IMG</strong></div>
+          <div class="col"><strong>Shortcode</strong></div>
+          <div class="col"><strong>Parametr</strong></div>
+          <div class="col"><strong>Example</strong></div>
+        </div>
+        {{/* fqs */}}
+        <div class="row">
+          <div class="col">
+            <a class="shordcode-link" href="https://monosnap.com/file/Cj8reKe2ZJHYUvof9KOyBxyVTJ6aLq" target="_blank"
+              ref="nofollow">
+              <img class="shordcode-img" src="https://api.monosnap.com/file/download?id=Cj8reKe2ZJHYUvof9KOyBxyVTJ6aLq"
+                alt="View" width="200" height="auto" loading="lazy">
+            </a>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; faqs &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60; qqu &#62;&#125;&#125; &#123;&#123;&#60;/ qqu &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60; qqa &#62;&#125;&#125; &#123;&#123;&#60;/ qqa &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60;/ faqs &#62;&#125;&#125;</p>
+          </div>
+          <div class="col">
+            <p>В шорткоде <strong>qqu</strong> Указать значени в "open" если надо оставить аккордион открытым </p>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; faqs &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60; qqu &#62;&#125;&#125; Question 1 &#123;&#123;&#60;/ qqu &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60; qqa &#62;&#125;&#125; Answer 1 &#123;&#123;&#60;/ qqa &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60; qqu &#62;&#125;&#125; Question 2 &#123;&#123;&#60;/ qqu &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60; qqa &#62;&#125;&#125; Answer 2 &#123;&#123;&#60;/ qqa &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60;/ faqs &#62;&#125;&#125;</p>
+          </div>
+        </div>
+        {{/* casino-rating */}}
+        <div class="row">
+          <div class="col">
+            <a class="shordcode-link" href="https://monosnap.com/file/QKfQbBdvHFOnEanyAnvZvOq2eURcPs" target="_blank"
+              ref="nofollow">
+              <img class="shordcode-img" src="https://api.monosnap.com/file/download?id=QKfQbBdvHFOnEanyAnvZvOq2eURcPs"
+                alt="View" width="200" height="auto" loading="lazy">
+            </a>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; casino-rating &#62;&#125;&#125;</p>
+          </div>
+          <div class="col">
+            <p>Выводит список казино у которых есть <b>homarating: true</b> </p>
+            <p>Сортируется по значению <b>weight: 0</b> чем выше значение тем ниже в очереди </p>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; casino-rating &#62;&#125;&#125;</p>
+          </div>
+        </div>
+        {{/* one-col */}}
+        <div class="row">
+          <div class="col">
+            <a class="shordcode-link" href="https://monosnap.com/file/4JnJXyjboQIdJZ19Dl5LeMR1oeJT80" target="_blank"
+              ref="nofollow">
+              <img class="shordcode-img" src="https://api.monosnap.com/file/download?id=4JnJXyjboQIdJZ19Dl5LeMR1oeJT80"
+                alt="View" width="200" height="auto" loading="lazy">
+            </a>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; one-col &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60;/ one-col &#62;&#125;&#125;</p>
+          </div>
+          <div class="col">
+            <p>Создает контейнер из одной колонки</p>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; one-col &#62;&#125;&#125;</p>
+            Какой то HTML код
+            <p>&#123;&#123;&#60;/ one-col &#62;&#125;&#125;</p>
+          </div>
+        </div>
+        {{/* img-col */}}
+        <div class="row">
+          <div class="col">
+            <a class="shordcode-link" href="https://monosnap.com/file/A6uINTArazn25vlUQEHHYNQrr8yghr" target="_blank"
+              ref="nofollow">
+              <img class="shordcode-img" src="https://api.monosnap.com/file/download?id=A6uINTArazn25vlUQEHHYNQrr8yghr"
+                alt="View" width="200" height="auto" loading="lazy">
+            </a>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; img-col &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60; img-col/left-img &#62;&#125;&#125; &#123;&#123;&#60;/ img-col/left-img
+              &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60; img-col/right-text &#62;&#125;&#125; &#123;&#123;&#60;/ img-col/right-text
+              &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60;/ img-col &#62;&#125;&#125;</p>
+          </div>
+          <div class="col">
+            <p>Создает контейнер из двух колонок</p>
+          </div>
+          <div class="col">
+            <p><b>Слева картинка справа текст</b></p>
+            <p>&#123;&#123;&#60; img-col &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60; img-col/left-img &#62;&#125;&#125; &#123;&#123;&#60;/ img-col/left-img
+              &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60; img-col/right-text &#62;&#125;&#125; &#123;&#123;&#60;/ img-col/right-text
+              &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60;/ img-col &#62;&#125;&#125;</p>
+            <p><b>Справа картинка слева текст</b></p>
+            <p>&#123;&#123;&#60; img-col &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60;img-col/right-img &#62;&#125;&#125; &#123;&#123;&#60;/ img-col/right-img
+              &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60; img-col/left-text &#62;&#125;&#125; &#123;&#123;&#60;/ img-col/left-text
+              &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60;/ img-col &#62;&#125;&#125;</p>
+          </div>
+        </div>
+        {{/* casino */}}
+        <div class="row">
+          <div class="col">
+            <a class="shordcode-link" href="https://monosnap.com/file/FcLBJqG36h10VQIW3kVELoi7UOA8x0" target="_blank"
+              ref="nofollow">
+              <img class="shordcode-img" src="https://api.monosnap.com/file/download?id=FcLBJqG36h10VQIW3kVELoi7UOA8x0"
+                alt="View" width="200" height="auto" loading="lazy">
+            </a>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; casino &#62;&#125;&#125;</p>
+          </div>
+          <div class="col">
+            <p>Создает карточку с казино</p>
+            <p>Принимает 2 параметра</p>
+            <p>1 параметр - путь до файла (Указать в кавычка "")</p>
+            <p>2 параметр - Текст в шапке (Указать в кавычка "")</p>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; casino "flush.md" "Casino of the month" &#62;&#125;&#125;</p>
+          </div>
+        </div>
+        {{/* casino-rew */}}
+        <div class="row">
+          <div class="col">
+            <a class="shordcode-link" href="https://monosnap.com/file/risAZk1ufzOWSrYhFf7fZdOfoRwL2V" target="_blank"
+              ref="nofollow">
+              <img class="shordcode-img" src="https://api.monosnap.com/file/download?id=risAZk1ufzOWSrYhFf7fZdOfoRwL2V"
+                alt="View" width="200" height="auto" loading="lazy">
+            </a>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; casino-rew &#62;&#125;&#125;</p>
+          </div>
+          <div class="col">
+            <p>Создает карточку с казино</p>
+            <p>Принимает 1 параметра</p>
+            <p>1 параметр - путь до файла (Указать в кавычка "")</p>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; casino-rew "betplay.md" &#62;&#125;&#125;</p>
+          </div>
+        </div>
+        {{/* content */}}
+        <div class="row">
+          <div class="col">
+            <a class="shordcode-link" href="https://monosnap.com/file/EAJneHNx9jz2LCGfvAyhHuioAO2F03" target="_blank"
+              ref="nofollow">
+              <img class="shordcode-img" src="https://api.monosnap.com/file/download?id=EAJneHNx9jz2LCGfvAyhHuioAO2F03"
+                alt="View" width="200" height="auto" loading="lazy">
+            </a>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; content &#62;&#125;&#125;</p>
+            <p>&#123;&#123;&#60;/ content &#62;&#125;&#125;</p>
+          </div>
+          <div class="col">
+            <p>Создает контейнер из двух колонок</p>
+            <p>Слева текст</p>
+            <p>Справа навигация</p>
+          </div>
+          <div class="col">
+            <p>&#123;&#123;&#60; content &#62;&#125;&#125;</p>
+            <p>HTML код</p>
+            <p>&#123;&#123;&#60;/ content &#62;&#125;&#125;</p>
+          </div>
+        </div>
+      </div>
+
+      {{.Content}}
+    </div>
+  </div>
+</main>
+{{ end }}

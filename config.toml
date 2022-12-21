@@ -1,4 +1,4 @@
-baseURL = 'https://www.example.com'
+baseURL = 'https://www.example.com' # нужно указать домане https://example.com
 languageCode = 'en-us'
 title = 'Best Bitcoin Casinos » Find The Best Crypto Casino '
 theme = "basic"
@@ -6,7 +6,7 @@ DefaultContentLanguage = 'en'
 enableRobotsTXT = true
 disableHugoGeneratorInject = true
 summaryLength = 30
-paginate = 50 
+paginate = 20
 
 [markup]
   [markup.tableOfContents]
@@ -26,7 +26,7 @@ paginate = 50
   nme = 'Crypto Casinos'
   ref = 'https://redirectid.com/click.php?key=42t5uehm7vx8tk6nibtr&split='
   athr = "Barbara"
-  CPU = "https://www.example.com"
+  CPU = "https://www.example.com" # нужно указать домане https://example.com
 
 
 
@@ -35,6 +35,16 @@ paginate = 50
   weight = 1
   [languages.en.params]
     icon = '/images/flags/gb-nir.svg'
+# [languages.de]
+#   languageName = 'DE'
+#   weight = 1
+#   [languages.de.params]
+#     icon = '/images/flags/de.png'
+# [languages.nl]
+#   languageName = 'NL'
+#   weight = 1
+#   [languages.nl.params]
+#     icon = '/images/flags/nl.svg'
 
 
 #menu
@@ -96,7 +106,7 @@ paginate = 50
 #   weight = 2
 
 
-# footer menu
+# footer menu 1
 [[languages.en.menu.first]]
   name = "Crypto Casinos"
   url = '#'
@@ -118,6 +128,8 @@ paginate = 50
   url = '#'
   weight = 5
 
+# footer menu 2
+
 [[languages.en.menu.second]]
   name = "Ethereum Casinos"
   url = '#'
@@ -134,6 +146,8 @@ paginate = 50
   name = "Bitcoin Slots"
   url = '#'
   weight = 4
+
+# footer menu 3
 
 [[languages.en.menu.three]]
   name = "About us"

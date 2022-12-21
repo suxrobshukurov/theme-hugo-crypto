@@ -1,9 +1,68 @@
 {{ define "main" }}
-{{ partial "parts/hero-section.html" . }}
-{{ partial "parts/wave.html" . }}
-<section>
-  <article>
-    {{.Content}}
-  </article>
-</section>
+<main>
+  {{$sticky := where (where .Site.RegularPages "Type" "blog") ".Params.sticky" "==" true}}
+  {{ if $sticky }}
+  <section class="hero-section feature-section position-relative py-40 text-lg-left" style="background-color: #043760;">
+    <div class="container">
+      <div class="row">
+        <h1>{{.Params.h1}}</h1>
+      </div>
+      <div class="row">
+        {{ range first 1 $sticky }}
+        <div class="col-lg-6">
+          <article>
+            {{ partial "parts/new-card.html" . }}
+          </article>
+        </div>
+        {{ end }}
+        <div class="col-lg-6">
+          <div class="d-none d-lg-block"> 
+            {{ range $index, $value := $sticky }}
+            {{ if ne $index 0 }}
+            <article>
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <div class="article pl-20">
+                    <h2 class="fs-16 lh-26 text-closeBlack mb-10"><a
+                        href="{{.Permalink}}">{{.Params.nme}}</a></h2>
+                    <a class="btn-text-only" href="{{.Permalink}}">{{.Params.nme}}</a>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <figure style="max-height:110px">
+                    <a class="stretched-link" href="{{.Permalink}}">
+                      <amp-img width="1" height="0.81" alt="{{.Params.nme}}" class="image"
+                        src="{{.Params.thbnl | default site.Params.DefaultImg}}" layout="responsive"></amp-img>
+                    </a>
+                  </figure>
+                </div>
+              </div>
+            </article>
+            {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ partial "parts/wave.html" . }}
+  {{else}}
+  <div class="container m">
+    <h1>{{.Params.h1}}</h1>
+  </div>
+  {{ end }}
+  {{$posts := .Paginate (where (where .Site.RegularPages "Type" "blog") ".Params.sticky" "!=" true)}}
+  <section class="blog campaign-news py-20" id="news">
+    <div class="container">
+      <div class="row align-items-end mb-20">
+        {{ range $posts.Pages }}
+          {{ partial "parts/news-mini-card.html" . }}
+        {{ end }}
+      
+      </div>
+        {{ template "_internal/pagination.html" . }}
+    </div>
+  </section>
+
+</main>
 {{ end }}

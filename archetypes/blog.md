@@ -9,4 +9,5 @@ nme: "{{ replace .Name "-" " " | title }}"
 thbnl: ''
 athr: ''
 avtr: ''
+sticky: false
 ---

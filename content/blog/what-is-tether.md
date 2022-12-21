@@ -10,6 +10,7 @@ thbnl: '/images/blog/What-is-Tether.webp'
 icon: '/images/blog/What-is-Tether.webp'
 athr: ''
 avtr: ''
+sticky: false
 ---
 
 ## What is Tether?

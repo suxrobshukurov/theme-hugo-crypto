@@ -1,0 +1,16 @@
+<div class="row align-items-center">
+  <div class="col-8 col-lg-6">
+    <div class="article-holder pl-20">
+      <h2 class="text-closeBlack mb-10"><a href="{{.Permalink}}">{{.Params.nme}}</a></h2>
+      <a class="btn-text-only" href="{{.Permalink}}">{{i18n "other-read"}}</a>
+    </div>
+  </div>
+  <div class="col-4 col-lg-6">
+    <figure>
+      <a class="stretched-link" href="{{.Permalink}}">
+        <amp-img width="1" height="0.81" alt="{{.Params.nme}}" class="image"
+          src="{{.Params.thbnl | default site.Params.DefaultImg}}" layout="responsive"></amp-img>
+      </a>
+    </figure>
+  </div>
+</div>

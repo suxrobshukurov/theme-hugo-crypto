@@ -25,11 +25,8 @@ nme: 'Home'
 {{</ img-col >}}
 
 {{< img-col >}}
-
 {{< img-col/right-img >}} <amp-img width="145" height="145" alt="Security and licenses icon" src="/images/icons/crypto.svg"></amp-img> {{</ img-col/right-img >}}
-
 {{< img-col/left-text >}} <h2 class="mb-0 mb-lg-30">Cryptocurrencies accepted</h2><p>It might seem obvious, but it's essential that the crypto casinos on our lists accept a large number of cryptocurrencies. While most users stick to the more well-known currencies such as <a href="/news/what-is-bitcoin/">Bitcoin</a>, we never want to limit players to these currencies. <b>That's why each casino has to have at least three cryptocurrencies accepted to be considered a "crypto casino".</b> The most common currencies accepted by the sites on our lists are Bitcoin, <a href="/news/what-is-ethereum/">Ethereum</a>, Bitcoin Cash, and <a href="/news/what-is-litecoin/">Litecoin</a>. As more and more cryptos pop up and become popular we'll increase the amount of cryptos a site needs to have to be considered a crypto casino.</p>{{</ img-col/left-text >}}
-
 {{</ img-col >}}
 
 {{< img-col >}}

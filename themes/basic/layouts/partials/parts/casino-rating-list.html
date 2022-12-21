@@ -30,8 +30,9 @@
               </figure>
             </a>
             <div class="media-body">
-              <h3 class="fw-700 text-closeBlack2 mb-lg-5 mb-0"><a href="{{.Params.ref}}"
-                  rel="nofollow">{{.Params.nme}}</a></h3>
+              <a href="{{.Params.ref}}" rel="nofollow">
+                <h3 class="fw-700 text-closeBlack2 mb-lg-5 mb-0">{{.Params.nme}}</h3>
+              </a>
               {{ with i18n "crt-acce" }}
               <span class="fs-11 text-purple">{{.}}</span>
               {{ end }}
@@ -87,9 +88,10 @@
             {{ if .Params.shrt_smmry }}
             <div class="col-lg-7 mb-15 mb-lg-0 order-lg-2 order-3">
               <header class="mb-10">
-                <amp-img alt="{{.Params.shrt_smmry.alt}}" title="{{.Params.shrt_smmry.ttle}}" width="17" height="17" src="{{.Params.shrt_smmry.img}}"
-                  class="d-inline-block mr-5"></amp-img>
-                <span class="fs-11 fw-300 text-grey text-uppercase d-inline-block p-r b-3">{{.Params.shrt_smmry.ttle}}</span>
+                <amp-img alt="{{.Params.shrt_smmry.alt}}" title="{{.Params.shrt_smmry.ttle}}" width="17" height="17"
+                  src="{{.Params.shrt_smmry.img}}" class="d-inline-block mr-5"></amp-img>
+                <span
+                  class="fs-11 fw-300 text-grey text-uppercase d-inline-block p-r b-3">{{.Params.shrt_smmry.ttle}}</span>
                 <div class="fs-12 fw-300 lh-24 text-greyBlue pb-30">{{.Params.shrt_smmry.txt | safeHTML}}</div>
                 <a class="read-review fs-13 fw-300 text-blue btn-text-only position-absolute"
                   href="{{.Permalink}}">{{i18n

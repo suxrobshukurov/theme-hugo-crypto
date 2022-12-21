@@ -2,7 +2,7 @@
   <div class="container position-relative">
     <div class="row justify-content-between align-items-center">
       <div class="col-lg-auto logo">
-        <a href="{{.Site.BaseURL}}" >
+        <a href="{{ relLangURL `/` }}" >
           {{ if .Site.Params.Logo }}
             <amp-img width="220" height="40" src="{{.Site.Params.Logo}}" alt="{{.Site.Params.Nme}}"
             title="{{.Site.Params.Nme}}"></amp-img>
@@ -19,7 +19,7 @@
           </ul>
         </div>
       </div>
-      <button class="menu-lines" id="menu-btn" role="button" tabindex="0"
+      <button class="menu-lines" aria-label="Burger menu" id="menu-btn" role="button" tabindex="0"
         on="tap:menu-btn.toggleClass(class='menu-toggle'),body.toggleClass(class='body-overlay'),nav.toggleClass(class='show')">
         <span></span>
         <span></span>

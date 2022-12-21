@@ -5,11 +5,9 @@
     {{.title}}
   </div>
   <ul class="collapse dont-collapse-md fs-12 text-white lh-24 show">
-    <ul class="menu">
       {{ range .menu }}
       <li><a href="{{.URL}}">{{.Name}}</a></li>
       {{ end }}
-    </ul>
   </ul>
 </div>
 {{end}}

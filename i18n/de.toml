@@ -1,8 +1,8 @@
 #head
 [lng-cde] # lang
-  other = "en"
+  other = "de"
 [lng-lcl] # meta local
-  other = "en-US"
+  other = "de-DE"
 
 #footer
 [ftr-descr]
@@ -59,13 +59,6 @@
   other = "Read the full review"
 [hm-bs-csn-read]
   other = "Read Review"
-
-#404 
-
-[404-text]
-  other = "Sorry, but the page you were trying to view does not exist."
-[404-go-home]
-  other = "Go to homepage"
 
 # SHORTCODES
 # casinos-rew
