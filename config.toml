@@ -1,4 +1,4 @@
-baseURL = 'https://suxrobshukurov.github.io/theme-hugo-crypto/' # нужно указать домане https://example.com
+baseURL = 'https://suxrobshukurov.github.io/' # нужно указать домане https://example.com
 languageCode = 'en-us'
 title = 'Best Bitcoin Casinos » Find The Best Crypto Casino '
 theme = "basic"
